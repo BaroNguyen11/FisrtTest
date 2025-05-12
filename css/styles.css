@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.scroll-container {
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  position: relative;
+  background-color: white;
+}
+
+.scroll-content {
+  display: flex;
+  width: fit-content; /* Điều chỉnh chiều rộng tự động */
+  animation: scroll 15s linear infinite;
+}
+
+.scroll-content img {
+  height: 80px;
+  margin-right: 0;
+}
+
+/* Hiệu ứng cuộn liên tục */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Di chuyển một nửa chiều rộng của các phần tử */
+  }
+}
+
+.main-content {
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
