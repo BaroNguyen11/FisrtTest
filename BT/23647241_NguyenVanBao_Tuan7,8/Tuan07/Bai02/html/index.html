@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        #tb-1,
+        #td-1,
+        #th-1 {
+            height: 20px;
+            border: 3px solid white;
+        }
+        
+        table,
+        th,
+        td {
+            color: blue;
+            height: 30px;
+            border-collapse: collapse;
+            border: 2.5px solid rgb(197, 197, 197);
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("#muaVaoTxt").focus();
+            document.querySelector("#state").disabled = true;
+            $("#muaVaoTxt").blur(function() {
+                let muaVao = $("#muaVaoTxt").val();
+                if (/^[0-9]*$/.test(muaVao) && muaVao != '') {
+                    document.querySelector("#state").disabled = false;
+
+                } else {
+                    document.querySelector("#state").disabled = true;
+                }
+            })
+
+            $("#selectXe").change(function() {
+                let selectedCar = $("#selectXe").val();
+                const tach = selectedCar.split(";");
+                let srcHinh = tach[0];
+                let price = tach[1];
+                $("#carPic").attr('src', srcHinh);
+                $("#carPrice").text('Giá:' + price + ' USD');
+            })
+            $("#update").click(function() {
+                let muaVao = $("#muaVaoTxt").val();
+                let banRa = $("#banRaTxt").val();
+                let val = $('input[name="tiente"]:checked').val();
+                if (val == 1) {
+                    $("#goldIn").html(muaVao);
+                    $("#goldOut").html(banRa);
+                } else {
+                    $("#usdIn").html(muaVao);
+                    $("#usdOut").html(banRa);
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <header><img src="../image/banner_car.jpg" width="100%"></header>
+        <div class="row m-0">
+            <div class="col-4 p-0">
+                <table class="table-left text-center w-100">
+                    <tr class="bg-secondary bg-opacity-25">
+                        <th colspan="2">Bảng tin thị trường</th>
+                    </tr>
+                    <tr class="bg-secondary bg-opacity-25">
+                        <td colspan="2">Vàng</td>
+                    </tr>
+                    <tr>
+                        <td class="col-6">Mua vào</td>
+                        <td>Bán ra</td>
+                    </tr>
+                    <tr>
+                        <td id="goldIn"></td>
+                        <td id="goldOut"></td>
+                    </tr>
+                    <tr class="bg-secondary bg-opacity-25">
+                        <td colspan="2">USD</td>
+                    </tr>
+                    <tr>
+                        <td>Mua vào</td>
+                        <td>Bán ra</td>
+                    </tr>
+                    <tr>
+                        <td id="usdIn"></td>
+                        <td id="usdOut"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-4 p-0">
+                <table id="tb-1" class="text-start w-100 bg-secondary bg-opacity-25">
+                    <tr class="text-center">
+                        <th id="th-1" colspan="2">Cập nhật giá cả thị trường</th>
+                    </tr>
+                    <tr>
+                        <th id="td-1" class="text-dark">Mua vào</th>
+                        <th id="td-1" class="text-dark"><input type="text" id="muaVaoTxt"></th>
+
+                    </tr>
+                    <tr>
+                        <th id="td-1" class="text-dark">Bán ra</td>
+                            <th id="td-1"><input type="text" id="banRaTxt"></th>
+
+                    </tr>
+                    <tr>
+                        <th id="td-1" class="text-dark">Loại xe</th>
+                        <th id="td-1"><select name="" id="selectXe">
+                            <option value="../image/car1.jpg; 35000">Toyota</option>
+                            <option value="../image/car2.jpg; 15000">KIA</option>
+                            <option value="../image/car3.jpg; 40000">Ford</option>
+                            <option value="../image/car4.jpg; 32000">Civic</option>
+                            <option value="../image/car5.jpg; 50000">Ferrari</option>
+                            <option value="../image/car7.jpg; 45000">Mercedes</option>
+                        </select></th>
+                    </tr>
+                    <tr>
+                        <th id="td-1"></th>
+                        <th id="td-1" class="text-dark">
+                            <input type="radio" name="tiente" id="gold" value="1">Vàng
+                            <input type="radio" name="tiente" id="usd" value="0">USD
+                        </th>
+                    </tr>
+                    <tr id="td-1">
+                        <td id="td-1"></td>
+                        <td id="td-1 btn-group">
+                            <button id="update">Update</button>
+                            <button id="state">State</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-4 p-0">
+                <table class="text-center w-100">
+                    <tr class="bg-secondary bg-opacity-25">
+                        <td>Bảng báo giá</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-start">-với kiểu dáng thể thao, sang trọng <br> -nổi bật, ít tốn nhiên liệu <br> - kiểu dáng thể thao
+                            </p>
+                        </td>
+                    </tr>
+                    <tr class="bg-secondary bg-opacity-25">
+                        <td><img src="../image/car1.jpg" id="carPic"></td>
+                    </tr>
+                    <tr class="text-start">
+                        <td style="color: rgb(0, 167, 0);" id="carPrice">Giá: 35000USD</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

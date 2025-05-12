@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .container {
+            width: 900px;
+          
+            background-color: #fbf2e9;
+            margin: 0 auto;
+
+        }
+
+        .header {
+            width: 100%;
+            height: 100px;
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .header__menu {
+            display: flex;
+            gap: 20px;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        .header__menu li {
+            cursor: pointer;
+            transition: all 0.3s;   
+        }
+        .header__menu li:hover{
+            color: #721e24;
+            transform: translate(0, -2px);
+        }
+        .header__icon{
+            gap: 20px;
+            display: flex;
+            cursor: pointer;
+        }
+        .icon{
+            transition: all 0.3s;
+        }
+        .icon:hover{
+            transform: scale(1.5);
+        }
+        .body {
+            width: 100%;
+           
+            display: flex;
+            gap: 30px;
+            position: relative;
+        }
+
+        .body__left {
+            width: 50%;
+        }
+
+        .body__left img {
+            width: 90%;
+        }
+
+        .body__right {
+            width: 40%;
+        }
+
+        .body__right p {
+            font-size: 20px;
+            width: 80%;
+            text-align: start;
+        }
+
+        .body__right img {
+            height: 70%;
+        }
+
+        .body__play {
+            position: absolute;
+            bottom: 50px;
+            right: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .circle {
+            font-size: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .circle:hover{
+            transform: scale(1.1);
+        }
+        .body__btn {
+            position: absolute;
+            right: 45%;
+            top: 35%;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+
+        }
+
+        button {
+            border-radius: 100%;
+            height: 80px;
+            width: 80px;
+            border: 1px solid rgb(189, 178, 178);
+            background-color: #fbf2e9;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        button:hover{
+            background-color: #ffffff;
+            transform: scale(1.1);
+        }
+        .footer {
+            padding: 20px;
+            width: 100%;
+           
+            display: flex;
+           
+        }
+        .footer p{
+            width: 70%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h3>J-Shop</h3>
+            <ul class="header__menu">
+                <li>Categories</li>
+                <li>About</li>
+                <li>Shop</li>
+                <li>Contact</li>
+            </ul>
+            <div class="header__icon">
+                <ion-icon name="search-outline" class="icon"></ion-icon>
+                <ion-icon name="cart-outline" class="icon"></ion-icon>
+                <ion-icon name="menu-outline" class="icon"></ion-icon>
+            </div>
+        </div>
+        <div class="body">
+            <div class="body__left">
+                <img src="../Code/image/body-left.png" alt="">
+                <br>
+                <br>
+                <br>
+                <br>
+                <h1 style="font-size: 60px; font-weight: 400; padding-left: 30px;">Jewellery tells a great story</h1>
+            </div>
+
+            <div class="body__right">
+                <h3 style="font-size: 36px; font-weight: 400;">Our Story</h3>
+                <p>modern jewellery is mode of gold, silver, or platinum often with precious,modern jewellery is mode of
+                    gold, silver, or platinum often with precious </p>
+                <img src="../Code/image/body-right.png" alt="">
+            </div>
+            <div class="body__play">
+                <ion-icon name="play-circle" class="circle"></ion-icon>
+                <label for="">Play Video</label>
+            </div>
+            <div class="body__btn">
+                <button><a href="#">Explore</a></button>
+            </div>
+        </div>
+        <div class="footer">
+            <div>
+                <h3>Gold</h3>
+                <p>modern jewellery is mode of gold, silvers</p>
+            </div>
+            <div>
+                <h3>SILVER</h3>
+                <p>modern jewellery is mode of gold, silver</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bài 2</title>
+    <style>
+       
+        .container{
+            width: 1000px;
+            border: 1px solid white;
+            box-shadow: 1px 1px 10px gray;
+            margin: 0 auto;
+          
+            display: flex;
+            flex-direction: column;
+        }
+        .header{
+            width: 98%;
+            height: 200px;
+            background-image: url("../Bai2/background.png");
+            
+            margin: 0 auto;
+            margin-top: 10px;    
+           
+           
+        }
+        .top{
+            display: flex;
+            padding: 10px;
+        }
+        .title{
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            padding-left: 20px;
+            margin: 90 0;
+
+        }
+     
+        .title h2{
+            margin-bottom: 0;
+        }
+        .title p{
+            margin-top: 0;
+        }
+        img{
+            width: 150px;
+            height: 150px;
+        }
+        .bottom{
+            width: 100%;
+            height: 30px;
+            background-color: #aaa49a;
+            transition: relative;
+            
+          
+        }
+        .bottom a{
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            font-size: 20px;
+            margin: 10px;
+        }
+        a:hover{
+            color: black;
+        }
+        .body .content{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .body{
+            flex:1;
+        }
+        .left{
+            width: 25%;
+            padding-top: 20px;
+        }
+        .left img{
+            width: 100%;
+            height: 200px;
+        }
+        .right{
+            width: 25%;
+        }
+        .center{
+            width: 40%;
+        }
+        .middle-content p{
+           font-size: 20px;
+        }
+        h2{
+            font-size: 30px;
+            margin-bottom: 0;
+        }
+        h3{
+            font-size: 20px;
+            color:  rgb(227, 115, 166);
+            margin-top: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .description{
+           color:  rgb(227, 115, 166);
+           font-size: 20px;
+           margin: 5px;
+        }
+        .description li{
+            padding: 5px;
+        }
+        .right li{
+            font-size: 20px;
+            padding: 5px;
+        }
+        .footer{
+            width: 98%;
+            height: 30px;
+            background-color: #aaa49a;
+            margin: 0 auto;
+            line-height: 30px;
+            margin: 10px;
+            padding: 0;
+        }
+       .footer p{
+        margin: 0;
+        color: white;
+        padding-left: 10px;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <!-- header -->
+     <div class="header">
+        <div class="top">
+            <img src="../Bai2/logo.png" alt="">
+            <div class="title">
+                <h2 style="font-size: 30px;">YOKO'S KITCHEN</h2>
+                <p>JAPANESE COOKING CLASSES</p>
+            </div>
+        </div>
+        <div class="bottom">
+            <a href="#">home</a>
+            <a href="#">classes</a>
+            <a href="#">catering</a>
+            <a href="#">about</a>
+            <a href="#">contact</a>
+           </div>
+     </div>
+    <!-- body -->
+     <div class="body">
+        <div class="content">
+            <div class="left">
+                <div class="left-content">
+                <img src="../Bai2/images.jpg" alt="">
+                <p> Bok Choi</p>
+                </div>
+            </div>
+
+            <div class="center">
+                <div class="middle-content">
+                    <h2>Japanese Vegetarian</h2>
+                    <h3 style="color:  rgb(227, 115, 166);">Five week course in London</h3>
+                    <p> A five week introduction to traditional Japanese vegetarian meals, teaching you a selection of rice and noodle dishes.</p>
+                </div>   
+            </div>
+
+            <div class="right">
+            <h2> Popular Recipies </h2> 
+            <ul class="description">
+                <li>Yakitori (grilled chicken) </li>
+                <li>Tsukune (minced chicken patties)</li>
+                <li>Okonomiyaki (savory pancakes)</li>
+                <li> Mizutaki (chicken stew)</li>
+            </ul>    
+            </div> 
+            
+        </div>
+        <div class="content">
+            <div class="left">
+                <div class="left-content">
+                <img src="../Bai2/teriyaki.jpg" alt="">
+                <p> Teriyaki Sauce</p>
+                </div>
+            </div>
+
+            <div class="center">
+                <div class="middle-content">
+                    <h2>Sauces Masterclass</h2>
+                    <h3>One day workshop</h3>
+                    <p> An intensive one-day course looking at how to create the most delicious sauces for use in a range of Japanese cookery.</p>
+                </div>   
+            </div>
+
+            <div class="right">
+            <h2 style="color: rgb(227, 115, 166);"> Contact </h2> 
+            <ul>
+                <li>Yoko's Kitchen</li>
+                <li>27 Redchurch Street</li>
+                <li>Shoreditch</li>
+                <li>London E2 7DP</li>
+                
+            </ul>    
+            </div> 
+        </div>
+     </div>
+    <!-- footer -->
+     <div class="footer">
+            <p>2011 Yoko's Kitchen</p>      
+     </div>
+    </div>
+   
+</body>
+</html>

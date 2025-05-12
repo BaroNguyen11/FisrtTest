@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 1200px;
+      height: 800px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      background-color: rgb(222, 198, 169);
+      position: relative;
+    }
+
+    .header img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .header__menu {
+      background-color: #088005;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header__menu__list {
+      display: flex;
+      gap: 5px;
+    }
+
+    .header__menu__list li {
+      list-style: none;
+      height: 50px;
+      width: 150px;
+      background-color: #006500;
+      border-radius: 8px;
+    }
+    .header__menu__list li:hover{
+      
+      background-color: #cbdd0f;
+    }
+    .header__menu__list a:hover{
+      font-weight: 800;
+      color: #721e24;
+    }
+    a {
+      font-size: 20px;
+      text-decoration: none;
+      color: white;
+      justify-content: center;
+      align-items: center;
+      line-height: 50px;
+      display: flex;
+    }
+
+    input,
+    button {
+      height: 25px;
+      border-radius: 7px;
+    }
+
+    button {
+      width: 70px;
+      height: 30px;
+    }
+
+    .header__search {
+      padding-right: 10px;
+    }
+    .header__menu__list>li{
+     position: relative;
+    }
+    .submenu{
+      position: absolute;
+      top: 50px;
+      left: 0;
+      display: none;
+      background-color: #006500;
+      border-radius: 8px;
+    }
+    .submenu li{
+      width: 150px;
+      height: 50px;
+      color: white;
+      background-color: #006500;
+      border-radius: 8px;
+      line-height: 50px;
+      text-align: center;
+    }
+    .header__menu__list>li:hover .submenu{
+      display: block;
+    }
+    .body {
+      background-color: #8f2f39;
+      display: flex;
+
+    }
+
+    .body__content {
+      background-color: #d3f7f5;
+      width: 65%;
+    }
+
+    .body__content-title {
+      color: #98242c;
+      margin-bottom: 10px;
+      padding: 10px;
+    }
+
+    .body__content-text {
+      width: 90%;
+      height: 100px;
+      border: 1px solid black;
+      border-radius: 4px;
+      box-shadow: 7px 9px 10px 4px rgb(127, 120, 120);
+      background-color: aliceblue;
+      padding: 10px;
+      margin: 0 auto;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .body__content-tour {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .body__content-tour img {
+      width: 200px;
+      height: 10;
+    }
+
+    .body_form {
+      width: 35%;
+      background-image: url("../Code/image/form.jpg");
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+    h2{
+      padding: 10px;
+    }
+    .form {
+      height: 90%;
+      width: 90%;
+      border: 1px solid black;
+      color: #721e24;
+      background-color: aliceblue;
+      border-radius: 8px;
+
+    }
+
+    .body__form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .body__form div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .body__form label {
+      width: 100px;
+      text-align: left;
+      color: black;
+    }
+
+    .body__form input,
+    select,
+    textarea {
+      flex: 1;
+      height: 15px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    select {
+      height: 30px;
+    }
+
+    .body__form .form__input__number {
+      width: 50px;
+    }
+    .form__footer{
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    .btn__order{
+      width: 100px;
+      height: 30px;
+      background-color: #088005;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn__order:hover,.btn__cancel:hover{
+      transform: translateY(-3px);
+    }
+    .btn__cancel{
+      width: 100px;
+      height: 30px;
+      background-color: #721e24;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .footer {
+      background-color: #006500;
+    }
+    .footer__content {
+      display: flex;
+      flex-direction: column;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      gap: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <img src="../Code/image/hd.png" alt="">
+      </div>
+      <div class="header__menu">
+        <ul class="header__menu__list">
+          <li><a href="#">Trang chủ</a></li>
+          <li><a href="#">Tìm Tour</a></li>
+          <li>
+            <a href="#">Dịch vụ</a>
+            <ul class="submenu">
+              <li>Đặt phòng</li>
+              <li>Đặt vé máy bay</li>
+            </ul>
+          </li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+        <div class="header__search">
+          <input type="text" placeholder="Tìm kiếm">
+          <button>Search</button>
+        </div>
+      </div>
+
+    </div>
+    <div class="body">
+      <div class="body__content">
+        <h2 class="body__content-title">Giới thiệu</h2>
+        <div class="body__content-text">
+          <p>Chào mừng bạn đến với trang web của chúng tôi. Chúng tôi cung cấp các dịch vụ du lịch tốt nhất cho bạn. Hãy
+            đến với chúng tôi để có những trải nghiệm tuyệt vời nhất.</p>
+        </div>
+        <div class="body__content-tour">
+          <img src="../Code/image/inf1.jpg" alt="">
+          <div class="content">
+            <h3>Tour Bali 4N3D: Khám phá BALI</h3>
+            <p>Giá tour chọn gói: 9.990.000 VNĐ</p>
+            <ul style="list-style-type: none;">
+              <li>-Khởi hành từ: Hồ Chí Minh</li>
+              <li>-Điểm đến: Bali</li>
+              <li>-Lịch trình: 4 ngày 3 đêm</li>
+              <li>-Phương tiện: Máy bay</li>
+            </ul>
+          </div>
+        </div>
+        <div class="body__content-tour">
+          <img src="../Code/image/inf2.jpg" alt="">
+          <div class="content">
+            <h3>Tour Hàn Quốc mùa thu 5N4D</h3>
+            <p>Giá tour chọn gói: 16.990.000 VNĐ</p>
+            <ul style="list-style-type: none;">
+              <li>-Khởi hành từ: Hồ Chí Minh</li>
+              <li>-Điểm đến: Hàn Quốc</li>
+              <li>-Lịch trình: 5 ngày 4 đêm</li>
+              <li>-Phương tiện: Máy bay</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="body_form">
+        <div class="form">
+          <h2>Thông tin đặt tour</h2>
+          <form action="" class="body__form">
+            <div>
+              <label for="">Họ tên:</label>
+              <input type="text">
+            </div>
+            <div>
+              <label for="">Điện thoại:</label>
+              <input type="text">
+            </div>
+            <div>
+              <label for="">Email:</label>
+              <input type="text">
+            </div>
+            <div>
+              <label for="">Số người lớn: </label>
+              <input type="text" class="form__input__number">
+              <label for="">Số trẻ em: </label>
+              <input type="text" class="form__input__number">
+            </div>
+            <div>
+              <label for="">Thanh toán:</label>
+              <select name="" id="">
+                <option style="font-size: 15px;">Tiền mặt</option>
+                <option style="font-size: 15px;">Chuyển khoản</option>
+              </select>
+            </div>
+            <br>
+          
+            <div>
+              <label for="">Các yêu cầu đặt biệt</label>
+              <textarea name="" id="" cols="30" rows="10" style="height: 70px;"></textarea>
+            </div>
+            <br>
+            <div class="form__footer">
+              <button class="btn__order">Đặt tour</button>
+              <button class="btn__cancel">Hủy đặt tour</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer__content">
+        <p> Họ tên sinh viên: Nguyễn Văn Bảo</p>
+        <p> Mã sinh viên: 23647241</p>
+        <p> Mã lớp: DHKTPM19A</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

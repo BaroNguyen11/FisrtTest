@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm Tra Tam Giác</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Kiểm Tra Tam Giác</h2>
+    <label for="sideA">Nhập cạnh a:</label>
+    <input type="number" id="sideA" min="1" required>
+    <br>
+    <label for="sideB">Nhập cạnh b:</label>
+    <input type="number" id="sideB" min="1" required>
+    <br>
+    <label for="sideC">Nhập cạnh c:</label>
+    <input type="number" id="sideC" min="1" required>
+    <br>
+    <button onclick="checkTriangle()">Kiểm Tra</button>
+    <p id="result"></p>
+
+    <script>
+        function checkTriangle() {
+            let a = parseFloat(document.getElementById("sideA").value);
+            let b = parseFloat(document.getElementById("sideB").value);
+            let c = parseFloat(document.getElementById("sideC").value);
+            let result = "";
+
+            if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                result = "Vui lòng nhập đầy đủ các cạnh!";
+            } else if (a + b > c && a + c > b && b + c > a) {
+                result = "Ba cạnh nhập vào có thể tạo thành một tam giác.";
+            } else {
+                result = "Ba cạnh nhập vào không tạo thành một tam giác.";
+            }
+            
+            document.getElementById("result").textContent = result;
+        }
+    </script>
+</body>
+</html>

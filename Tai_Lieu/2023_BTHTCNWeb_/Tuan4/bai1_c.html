@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai1_c</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        .container{
+            width: 800px;
+            border: 1px solid #e2dcdc;
+            margin-top: 20px;
+            box-shadow: 0 6px 7px 5px #a9a5a5;
+        }
+        .body_img{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+
+        }
+        .body_name{
+            display: flex;
+            align-items: center;
+        }
+        .edit-btn {
+            text-decoration: none;
+            color: #0d6efd;
+            font-weight: bold;
+        }
+        .badge-custom {
+            padding: 6px 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+            border-radius: 15px;
+        }
+        .badge-active {
+            background-color: #D4F3DA;
+            color: #198754;
+        }
+        .badge-onboarding{
+            background-color: #d6e1ff;
+            color: #4f5aef;
+        }
+        .badge-awaiting{
+            background-color: #fff1e8;
+            color: #fe9824;
+        }
+    </style>
+</head>
+<body>
+        <div class="container">
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>Position</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                    <td class="text-start">
+                         <div class="body_name">
+                            <img src="../Tuan4/Picture/meow.png" class="body_img">
+                                <div class="body_name_content ">
+                                    <span class="fw-bold ms-3">John Doe</span>
+                                    <br>
+                                    <span class="text-muted ms-3 ">john.doe@gmail.com</span>
+                                </div>
+                         </div>
+                    </td>
+                    <td>
+                        Software Engineer <br>
+                        <span class="text-muted">IT department</span>
+                    </td>
+
+                    <td>
+                        <div class="text-start">
+                            <span class="badge badge-custom badge-active">Active</span>
+                        </div>
+                    </td>
+                    
+                      <td>
+                        Senior
+                      </td>
+                   <td>
+                    <a href="#" class="edit-btn">EDIT</a>
+                   </td>
+                   </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                     <td class="text-start">
+                          <div class="body_name">
+                             <img src="../Tuan4/Picture/meow.png" class="body_img">
+                         <div class="body_name_content ">
+                             <span class="fw-bold ms-3">Alex Ray</span>
+                             <br>
+                             <span class="text-muted ms-3 ">alex.ray@gmail.com</span>
+                         </div>
+                          </div>
+                     </td>
+                     <td>
+                         Consultant <br>
+                         <span class="text-muted">Finance</span>
+                     </td>
+ 
+                     <td>
+                         <div class="text-start">
+                             <span class="badge badge-custom badge-onboarding">Onboarding</span>
+                         </div>
+                     </td>
+                     
+                       <td>
+                         Junior
+                       </td>
+                    <td>
+                     <a href="#" class="edit-btn">EDIT</a>
+                    </td>
+                    </tr>
+                 </tbody>
+                 <tbody>
+                    <tr>
+                     <td class="text-start">
+                          <div class="body_name">
+                             <img src="../Tuan4/Picture/meow.png" class="body_img">
+                         <div class="body_name_content ">
+                             <span class="fw-bold ms-3">John Doe</span>
+                             <br>
+                             <span class="text-muted ms-3 ">john.doe@gmail.com</span>
+                         </div>
+                          </div>
+                     </td>
+                     <td>
+                         Software Engineer <br>
+                         <span class="text-muted">IT department</span>
+                     </td>
+ 
+                     <td>
+                         <div class="text-start">
+                             <span class="badge badge-custom badge-awaiting">Awaiting</span>
+                         </div>
+                     </td>
+                     
+                       <td>
+                         Senior
+                       </td>
+                    <td>
+                     <a href="#" class="edit-btn">EDIT</a>
+                    </td>
+                    </tr>
+                 </tbody>
+            </table>
+           
+        </div>
+</body>
+</html>

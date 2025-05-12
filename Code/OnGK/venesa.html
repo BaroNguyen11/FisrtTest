@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .container {
+            width: 1100px;
+            height: 1000px;
+            background-color: #fbf2e9;
+            margin: 0 auto;
+        }
+
+        .header {
+            background-image: url("hinh/baner0.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 300px;
+            justify-content: space-between;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .header__logo {
+            display: flex;
+            color: white;
+
+        }
+
+        .header__logo img {
+            padding: 10px;
+            width: 40px;
+            height: 40px;
+        }
+
+        .header__menu a,
+        li {
+            text-decoration: none;
+            list-style: none;
+            color: white;
+            gap: 20px;
+        }
+
+        .header__menu li {
+            border: 1px solid black;
+            background-color: rgb(114, 114, 194);
+            height: 20px;
+            padding: 10px;
+            border-radius: 20px 20px 20px 20px;
+            transition: all 0.3s;
+        }
+        .header__menu li:hover{
+                background-color: rgb(53, 53, 141);
+                transform: translateY(-2px);
+                
+        }
+
+        .header__menu ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            gap: 20px;
+        }
+
+        .body {
+            display: flex;
+        }
+
+        .body__left {
+            width: 70%;
+        }
+
+
+        .body__left-header {
+            height: 40px;
+            background-color: rgb(118, 201, 201);
+            line-height: 40px;
+            padding-left: 10px;
+            color: rgb(34, 34, 104);
+
+        }
+
+        .body__left-header {
+            font-weight: 800;
+            font-size: 18px;
+        }
+
+        .body__left-content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .body__left-left {
+            width: 70%;
+        }
+
+        .body__left-left p {
+            font-style: italic;
+            color: rgb(245, 100, 22);
+            text-shadow: 2px 2px 4px #00ffff;
+            line-height: 1.6;
+            font-size: 18px;
+            font-weight: 700;
+            text-align: justify;
+            padding: 10px;
+            
+        }
+
+        .body__left-right {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            padding-left: 10px;
+        }
+
+        .body__left-right img {
+            height: 200px;
+            width: 200px;
+            border-radius: 15px;
+            border: 1px solid black;
+            box-shadow: 10px 8px 8px rgb(117, 110, 110);
+
+        }
+
+        .body__left-login {
+            background-color: rgb(118, 201, 201);
+            height: 40px;
+            display: flex;
+            align-items: center; 
+        }
+       
+        .body__left-form {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .body__left-form label {
+            width: 180px;
+        }
+
+        .body__left-form input {
+            width: 200px;
+            height: 25px;
+            border-radius: 30px;
+
+        }
+
+        .body__left-form select {
+            width: 200px;
+            height: 29px;
+            border-radius: 30px;
+        }
+
+        .body__left-form-label {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .body__left-form-label textarea {
+            display: flex;
+            margin: 0 auto;
+            width: 80%;
+            height: 120px;
+        }
+
+        button {
+            border-radius: 30px;
+            height: 30px;
+            width: 70px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        .btn__signin:hover{
+            background-color: #2ee59d;
+            transform: translateY(-3px);
+        }
+        .btn__login:hover{
+            background-color: #e5622e;
+            transform: translateY(-3px);
+        }
+        .body__left-footer {
+            display: flex;
+            flex-direction: row;
+            padding: 10px;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .body__right {
+            display: flex;
+          
+            width: 40%;
+            background-color: #bff8f8;
+            flex-direction: column;
+            height: 600px;
+        }
+        .body__right img{
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        .body__right li{
+           padding: 3px;
+            color: black;
+            list-style: circle;
+            list-style-position: inside;
+            font-size: 19px;
+        }
+       
+        .body__right h3{
+            margin: 0 auto;
+            font-size: 26px;
+            padding-top: 10px;
+            color: #2eb3b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header__logo">
+                <img src="../OnGK/hinh/logovenesa.png" alt="">
+                <div style="padding-top: 10px;">
+                    <h3>VENESA</h3>
+                    <p>Beauty Innovator</p>
+                </div>
+
+            </div>
+            <div class="header__menu">
+                <ul>
+                    <li>
+                        <a href="">
+                            Trang chủ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            Dịch vụ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            Công nghệ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            Sản phẩm
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            Hỗ trợ khách hàng
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="body">
+            <div class="body__left">
+                <div class="body__left-header">
+                    <h3>Vanesa chìa khóa vẻ đẹp bền vững từ chuyên gia</h3>
+                    <div class="body__left-content">
+                        <div class="body__left-left">
+                            <p>Ẩn chứa sau mỗi cái tên thương hiệu là cả một câu chuyện gửi gắm những âm sự tình cảm của
+                                nhà
+                                sáng lập. Thương hiệu được lấy cảm hứng từ tên vị nữ thần sắc đẹp Venus trong thần thoại
+                                La
+                                Mã, kết hợp cùng từ "Nesa" trong tiếng Do thái có ý nghĩa là vĩnh cửu.</p>
+                            <div class="body__left-login">
+                                <p>Đăng ký trải nghiệm miễn phí</p>
+                            </div>
+                            <form action="">
+                                <div class="body__left-form">
+                                    <div class="body__left-form-label">
+                                        <label for="">Họ tên:</label>
+                                        <input type="text">
+                                    </div>
+                                    <div class="body__left-form-label">
+                                        <label for="">Địa chỉ Email:</label>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="body__left-form">
+                                    <div class="body__left-form-label">
+                                        <label for="">Điện thoại:</label>
+                                        <input type="text">
+                                    </div>
+                                    <div class="body__left-form-label">
+                                        <label for="">Liệu trình trải nghiệm:</label>
+                                        <select name="" id="">
+                                            <option value="">Ngăn ngừa nấm</option>
+                                            <option value="">Ngăn ngừa nấm</option>
+                                            <option value="">Ngăn ngừa nấm</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="body__left-form-label">
+                                    <label for="">Ý kiến:</label>
+                                    <textarea name="" id=""></textarea>
+                                </div>
+                                <div class="body__left-footer">
+                                    <button class="btn__signin">
+                                        Đăng ký
+                                    </button>
+                                    <button class="btn__login">
+                                        Nhập lại
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="body__left-right">
+                            <h3>Sản phẩm của Venesa</h3>
+                            <div>
+                                <img src="../OnGK/hinh/h2.png" alt="">
+                                <img src="../OnGK/hinh/h1.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body__right">
+                <h3>Thông tin liên hệ</h3>
+                <img src="../OnGK/hinh/vnsa.PNG" alt="">
+                <ul>
+                    <li><b>Trụ sở chính:</b> Phòng 506, tầng 5, số 362 Phố Huế, Phường Phố Huế, Quận Hai Bà Trưng, Hà Nội</li>
+                    <li><b>Trụ sở chính:</b> Phòng 506, tầng 5, số 362 Phố Huế, Phường Phố Huế, Quận Hai Bà Trưng, Hà Nội</li>
+                    <li><b>Trụ sở chính:</b> Phòng 506, tầng 5, số 362 Phố Huế, Phường Phố Huế, Quận Hai Bà Trưng, Hà Nội</li>
+                    <li><b>Trụ sở chính:</b> Phòng 506, tầng 5, số 362 Phố Huế, Phường Phố Huế, Quận Hai Bà Trưng, Hà Nội</li>
+                    <li><b>Trụ sở chính:</b> Phòng 506, tầng 5, số 362 Phố Huế, Phường Phố Huế, Quận Hai Bà Trưng, Hà Nội</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+</body>
+
+</html>

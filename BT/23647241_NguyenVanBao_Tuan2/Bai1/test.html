@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Cafe Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8d7da;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            border: 1px solid red;
+            background-color: white;
+        }
+        h1 {
+            text-align: center;
+            color: red;
+            font-weight: bold;
+            font-style: italic;
+            text-shadow: 2px 2px 4px #888888;
+        }
+        .menu {
+            display: flex;
+            background-color: pink;
+            padding: 10px;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .menu a {
+            text-decoration: none;
+            color: black;
+            padding: 10px 20px;
+            border-right: 1px solid black;
+        }
+        .menu a:last-child {
+            border-right: none;
+        }
+        .content {
+            padding: 20px;
+        }
+        .title {
+            background-color: lightcoral;
+            color: white;
+            padding: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .form-container {
+            padding: 20px;
+            background-color: #f5c6cb;
+        }
+        .form-container input, .form-container textarea, .form-container select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: pink;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>EXAMPLE CAFE MENU</h1>
+        <div class="menu">
+            <a href="#">STARTER</a>
+            <a href="#">MAIN COURSES</a>
+            <a href="#">DESSERTS</a>
+            <input type="text"> <button>Go</button>
+        </div>
+        <div class="content">
+            <div class="title">Starter</div>
+            <ul>
+                <li>Chesnut and Mushroom Goujons (v)</li>
+                <li>Goat Cheese (v)</li>
+                <li>Honey Soy Chicken Kebabs (V)</li>
+                <li>Seafood Salad (v)</li>
+            </ul>
+            <div class="title">Desserts</div>
+            <ul>
+                <li>Lemon Sorbet (v)</li>
+                <li>Chocolate Mud Pie (v)</li>
+                <li>Pecan Pie (V)</li>
+                <li>Selection of Fine Cheeses from Around the World (v)</li>
+            </ul>
+        </div>
+        <div class="form-container">
+            <div class="title">INFORMATION</div>
+            <form>
+                <input type="text" placeholder="First Name">
+                <input type="text" placeholder="Last Name">
+                <input type="email" placeholder="Email">
+                <input type="text" placeholder="Telephone">
+                <select>
+                    <option>USA</option>
+                </select>
+                <label><input type="radio" name="nationality"> Vietnamese</label>
+                <label><input type="radio" name="nationality"> Foreigner</label>
+                <textarea placeholder="Comment"></textarea>
+                <button type="submit">Submit</button>
+                <button type="reset">Cancel</button>
+            </form>
+        </div>
+        <div class="footer">ABC Company © - 12345678 - abccoffee@gmail.com</div>
+    </div>
+</body>
+</html>

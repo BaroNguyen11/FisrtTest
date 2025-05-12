@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        img{
+            height: 150px;
+            width: 180px;
+            transition: 0.5s;
+        }
+        .zoomed-in{
+            transform: scale(2);
+        }
+    </style>
+    <script>
+        function toggleZoom(element) {
+            $(element).toggleClass("zoomed-in");
+        }
+    </script>
+</head>
+<body>
+    <div class="col-6 mx-auto mt-3 border border-1 p-2">
+        <div class="row m-0">
+            <p class="p-0 m-0" style="font-size: 20px;">Animal Gallery</p>
+        </div>
+        <div class="row m-0 gap-2">
+            <div class="col p-0 border border-1 text-center">
+                <img src="../image/lion.jpg"  onclick="toggleZoom(this);">
+                <p>Lion</p>
+            </div>
+            <div class="col p-0 border border-1 text-center">
+                <img src="../image/cat.jpg"  onclick="toggleZoom(this);">
+                <p>Cat</p>
+            </div>
+            <div class="col p-0 border border-1 text-center">
+                <img src="../image/bird.jpg"  onclick="toggleZoom(this);">
+                <p>Bird</p>
+            </div>
+        </div>
+        <div class="row m-0 gap-2">
+            <div class="col p-0 border border-1 text-center">
+                <img src="../image/Rhino.jpg"  onclick="toggleZoom(this);">
+                <p>Rhino</p>
+            </div>
+            <div class="col p-0 border border-1 text-center">
+                <img src="../image/panda.jpg" alt=""  onclick="toggleZoom(this);">
+                <p>Panda</p>
+            </div>
+            <div class="col p-0 border border-1 text-center">
+                <img src="../image/sheep.jpg" alt=""  onclick="toggleZoom(this);">
+                <p>Goat</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <title>Đăng ký tài khoản</title>
+    <style>
+        input[type="text"], [type="date"]{
+            padding: 0px;
+            height: 22px;
+        }
+        button{
+            height: 25px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#txtDN, #txtMK, #txtXNMK, #txtName, #txtDC, #txtDT, #txtEmail, #ngaySinh").blur(function(){
+                let tenDn = $("#txtDN").val();
+                let mk = $("#txtMK").val();
+                let xnmk = $("#txtXNMK").val();
+                let ngaysinh = new Date($("#ngaySinh").val());
+                let name = $("#txtName").val();
+                let diaChi = $("#txtDC").val();
+                let dt = $("#txtDT").val();
+                let email = $("#txtEmail").val();
+
+                if(!(/^[\w][^\s]*$/.test(tenDn) && tenDn != "")){
+                    $("#lbDN").show();
+                    $("#lbDN").text("Tên đăng nhập không hợp lệ");
+                }
+                else{
+                    $("#lbDN").hide();
+                }
+                if(!(/^(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*()-_+=])[A-Za-z\d!@#$%^&*()-_+=]{8,}$/.test(mk) && mk != "")){
+                    $("#lbMK").show();
+                    $("#lbMK").text("Mật khẩu không hợp lệ");
+                }
+                else{
+                    $("#lbMK").hide();
+                }
+                if(!(xnmk == mk)){
+                    $("#lbXNMK").show();
+                    $("#lbXNMK").text("Nhập lại");
+                }
+                else{
+                    $("#lbXNMK").hide();
+                }
+                
+                let ngayHT = new Date();
+                let tuoi = ngaysinh.getFullYear() - ngayHT.getFullYear();
+                if(tuoi < 16){
+                    $("#lbNS").show();
+                    $("#lbNS").text("Tuổi phải trên 16");
+                }
+                else{
+                    $("#lbNS").hide();
+                }
+
+                if(!(/^[A-Z][a-z]+( [A-Z][a-z]+){1,}$/.test(name) && name != "")){
+                    $("#lbName").show();
+                    $("#lbName").text("Tên không hợp lệ");
+                }
+                else{
+                    $("#lbName").hide();
+                }
+
+                if(diaChi === ""){
+                    $("#lbDC").show();
+                    $("#lbDC").text("Hãy nhập địa chỉ");
+                }
+                else{
+                    $("#lbDC").hide();
+                }
+
+                if(!(/^(09|03|07|06|05|04)[0-9]{8}$/.test(dt) && dt != "")){
+                    $("#lbDT").show();
+                    $("#lbDT").text("Số điện thoại không hợp lệ.");
+                }
+                else{
+                    $("#lbDT").hide();
+                }
+                
+                if(!(/^[a-z]\w+\.*\w*@gmail\.com$/.test(email) && email !== "")){
+                    $("#lbEmail").show();
+                    $("#lbEmail").text("Email không hợp lệ");
+                }
+                else{
+                    $("#lbEmail").hide();
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="col-6 mx-auto mt-3 border border-2">
+        <p class="text-center fs-3 fw-bold py-2">ĐĂNG KÝ TÀI KHOẢN</p>
+        <div class="row m-0 col-12 mx-auto pb-2 border-bottom">
+            <label for="" class="col-3 text-end">Tên đăng nhập:</label>
+            <input type="text" placeholder="txtDN" id="txtDN" class="col-4">
+            <label for="" style="color: red;" class="col-5" id="lbDN">*</label>
+        </div>
+        <div class="row m-0 col-12 mx-auto pb-2 mt-2 border-bottom">
+            <label for="" class="col-3 text-end">Mật khẩu: </label>
+            <input type="text" placeholder="txtMK" id="txtMK" class="col-4">
+            <label for="" style="color: red;" class="col-5" id="lbMK">*</label>
+        </div>
+        <div class="row m-0 col-12 mx-auto pb-2 mt-2 border-bottom">
+            <label for="" class="col-3 text-end">Nhập lại mật khẩu:</label>
+            <input type="text" placeholder="txtXNMK" id="txtXNMK" class="col-4">
+            <label for="" style="color: red;" class="col-5" id="lbXNMK">*</label>
+        </div>
+
+        <p class="text-center fw-bold py-4">THÔNG TIN CÁ NHÂN</p>
+        <div class="row m-0 col-12 mx-auto pb-2 border-bottom">
+            <label for="" class="col-3 text-end">Họ và tên:</label>
+            <input type="text" placeholder="txtName" id="txtName" class="col-4">
+            <label for="" style="color: red;" class="col-5" id="lbName">*bắt buộc</label>
+        </div>
+        <div class="row m-0 col-12 mx-auto pb-2 mt-2 border-bottom">
+            <label for="" class="col-3 text-end">Ngày sinh:</label>
+            <input type="date"  id="ngaySinh" class="col-3">
+            <label for="" style="color: red;" class="col-5" id="lbNS">*</label>
+        </div>
+        <div class="row m-0 col-12 mx-auto pb-2 mt-2 border-bottom">
+            <label for="" class="col-3 text-end">Giới tính:</label>
+            <div class="col-4">
+                <input type="radio" name="gt" value="Nam" checked> Nam
+                <input type="radio" name="gt" value="Nu"> Nữ
+            </div>
+        </div>
+        <div class="row m-0 col-12 mx-auto pb-2 border-bottom">
+            <label for="" class="col-3 text-end">Địa chỉ:</label>
+            <input type="text" placeholder="txtDC" id="txtDC" class="col-4">
+            <label for="" style="color: red;" id="lbDC" class="col-5">*</label>
+
+        </div>
+        <div class="row m-0 col-12 mx-auto pb-2 border-bottom">
+            <label for="" class="col-3 text-end">Điện thoại:</label>
+            <input type="text" placeholder="txtDT" id="txtDT" class="col-4">
+            <label for="" style="color: red;" class="col-5" id="lbDT">phải là số</label>
+        </div>
+        <div class="row m-0 col-12 mx-auto pb-2 border-bottom">
+            <label for="" class="col-3 text-end">Email:</label>
+            <input type="text" placeholder="txtEmail" id="txtEmail" class="col-4">
+            <label for="" style="color: red;" class="col-5" id="lbEmail">nhập đúng địa chỉ email</label>
+        </div>
+        <div class="row m-0 col-12 mx-auto pb-2 border-bottom mb-3">
+            <div class="col-3 text-end mx-auto">
+                <button class="btn btn-dark pb-0 pt-0">Đăng ký</button>
+                <button class="btn btn-dark pb-0 pt-0">Hủy</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

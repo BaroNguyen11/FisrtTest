@@ -1,0 +1,6 @@
+.clearCart{
+    transition: all 0.3s ease;
+}
+.clearCart:hover{
+    transform: translateY(-5px);
+}

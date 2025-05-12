@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        *{
+            color: rgba(0, 0, 175, 0.678);
+        }
+        input[type=text],[type=date]{
+            height: 20px;
+            width: 70%;
+            margin: 3px 0;
+            margin-left: 5px;
+        }
+        button, select{
+            color:black;
+            height: 25px;
+            padding: 0px 5px;
+            border-radius: 5px 5px 5px 5px;
+            border: 1px solid;
+            margin-left: 5px;
+        }
+        table, td{
+            border: 2px solid rgb(0, 180, 0);
+        }
+        td{
+            padding-left: 10px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+                let param = new URLSearchParams(window.location.search);
+                $("#fullName").html(param.get('fullName'));
+                $("#userName").html(param.get('userName'));
+                $("#pwd").html(param.get('pwd'));
+                $("#birthDate").html(param.get('ngaySinh'));
+                $("#diaChi").html(param.get('diaChi'));
+                $("#phone").html(param.get('phone'));
+                $("#email").html(param.get('email'));
+                $("#soThich").html(param.get('soThich'));
+        })
+    </script>
+    <title>Thông tin</title>
+</head>
+<body>
+    <div class="col-6 p-2 mx-auto" style="background-color: #ecfdea;">
+        <table style="width: 100%;">
+            <p class="text-center m-0">Register Form</p>
+            <tr>
+                <td class="text-end col-4">Họ và tên:</td>
+                <td class="text-start" id="fullName"></td>
+            </tr>
+            <tr>
+                <td class="text-end">Tên đăng nhập:</td>
+                <td class="text-start" id="userName"></td>
+            </tr>
+            <tr>
+                <td class="text-end">Mật khẩu:</td>
+                <td class="text-start" id="pwd"></td>
+            </tr>
+            <tr>
+                <td class="text-end">Ngày sinh:</td>
+                <td class="text-start" id="birthDate"></td>
+            </tr>
+            <tr>
+                <td class="text-end">Điện thoại:</td>
+                <td class="text-start" id="phone"></td>
+            </tr>
+            <tr>
+                <td class="text-end">Địa chỉ:</td>
+                <td id="diaChi" class="text-start"></td>
+            </tr>
+            <tr>
+                <td class="text-end">Email khác:</td>
+                <td class="text-start" id="email"></td>
+            </tr>
+            <tr>
+                <td class="text-end">Sở thích:</td>
+                <td id="soThich" class="text-start"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

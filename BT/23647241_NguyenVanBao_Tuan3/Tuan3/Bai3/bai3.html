@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 3</title>
+   <style>
+    *{
+        box-sizing: border-box;
+    }
+    .container {
+        width: 750px;   
+        border: 1px solid #4f4f4f;
+        margin: 0 auto;
+    }
+    .header{
+        background-color: #ac4b16;
+    }
+    h1{
+        margin: 0;
+        padding: 15px;
+        color: #7e7c07;
+        text-shadow: -4px -3px 6px white;
+
+    }
+    .menu{
+        background-color: #ffffff;
+        border: 1px solid #918b8b;
+        display: flex;
+        gap: 30px;
+        padding-left: 20px;
+    }
+    .menu a{
+        text-decoration: none;
+        color: #d1a188;
+        font-weight: 700;
+        font-size: 19px;
+    }
+    .content_img img{
+        width: 100%;
+        height: 100px;
+    }
+    .content{
+        display: flex;
+    }
+    .left{
+        width: 65%;
+    }
+    .right{
+        width: 35%;
+        padding-left: 20px;
+        padding-right: 10px;
+        
+    }
+    h2{
+        color: #aa8525;
+        padding-left: 10px;
+    }
+    .content_login_form{
+        color: #aa8525;
+        padding-left: 40px;
+        font-weight: 700;
+    }
+    hr{
+        border: 1px solid #e6dede;
+    }
+    form{
+        width: 90%;
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        padding-left: 40px;
+    }
+    input{
+        border: none;
+        border-bottom: 1px solid #bdb7b7;
+        font-size: 17px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    button{
+        width: 120px;
+        height: 30px;
+        background-color: #7f7e05;
+        color: white;
+        font-weight: 400;
+        border: none;
+        cursor: pointer;
+        margin-top: 50px;
+    }
+  
+    .links{
+        background-color: #faebd6;
+        border-radius: 20px 20px 0px 0px;
+        
+    }
+    ul{
+        margin-left: 20px;
+    }
+    li{
+        list-style: square;
+    }
+    a{
+        text-decoration: none;
+        color: #e9a449;
+    }
+    h3{
+        padding-left: 20px;
+        font-weight: 800;
+        color: #694534;
+    }
+    .img{   
+        
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        border: 1px solid #ded7d7;
+        height: 80px;
+        float: left;
+        margin-right: 20px;
+    }
+    .img img{
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+        object-fit: contain;
+       
+    }
+    .footer img{
+        width: 100%;
+    }
+    
+    .info_design p {
+        margin: 0; 
+        font-size: 14px; 
+        text-align: justify; 
+        font-size: 16px;
+        width: 40%;
+        flex-wrap: wrap;
+        float: left;
+    }
+    .info_design{
+        align-items: flex-start;
+        
+    }
+   </style>
+
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>AUTUMN TRAVEL COMPANY</h1>
+            <div class="menu">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Products</a>
+                <a href="#">Services</a>
+                <a href="#">Order</a>
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="content_img">
+            <img src="../Bai3/body.jpg" alt="">
+        </div>
+        <div class="content">
+            
+            <div class="left">
+              
+               <h2>Sign up for membership benefits</h2>
+               <div class="content_login_form">      
+                        <p>Our philosophical values are transparency, respect, formality and responsibility. 
+                        Our stimulus is your enthusiasm. Our motto is your satisfaction.</p>
+               </div>
+
+                <form>
+                    <input type="text" placeholder="Username" required>
+                    <input type="email" placeholder="E-mail" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Retype password" required>
+                    <button type="submit">SIGN ME UP</button>
+                </form>
+            </div>
+            <hr>
+            <div class="right">
+                <div class="links">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="#">Make your Own Tour</a></li>
+                        <li><a href="#">Maldives Tours</a></li>
+                        <li><a href="#">Nature & Adventure</a></li>
+                        <li><a href="#">Readymade Tours</a></li>
+                        <li><a href="#">Europe Tours</a></li>
+                        <li><a href="#">Russia Tours</a></li>
+                    </ul>
+                </div>
+
+                <div class="info">
+                    <h3>More info</h3>
+                   <div class="info_design">
+                    <p>
+                        <div class="img">
+                            <img src="../Bai3/leaf.png" alt="Travel">         
+                        </div>
+                        Our purpose is the client who gives to us the opportunity to serve and to make known the reality around the world.
+                        </p>
+                   </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <img src="../Bai3/footer.jpg" alt
+        </div>
+    </div>
+</body>
+</html>

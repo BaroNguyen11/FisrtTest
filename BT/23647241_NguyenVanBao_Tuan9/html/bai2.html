@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Tour</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('input, select').focus(function() {
+                const errorId = $(this).attr('id').replace('txt', 'err');
+                $('#' + errorId).text('');
+            });
+        });
+        
+        function kiemTraMaTour() {
+            let maTour = $('#txtMaTour').val().trim();
+            let regex = /^[A-Z]{3}-[A-Z]{3}-\d{2}-\d{4}$/;
+            if (maTour === '') {
+                $('#errMaTour').text('* Mã Tour là bắt buộc');
+                return false;
+            }
+            if (!regex.test(maTour)) {
+                $('#errMaTour').text('* Mã Tour phải theo dạng XXX-XXX-mm-yyyy (X: ký tự hoa)');
+                return false;
+            }
+            $('#errMaTour').text('');
+            return true;
+        }
+
+        function kiemTraHanhTrinh() {
+            let hanhTrinh = $('#txtHanhTrinh').val().trim();
+            if (hanhTrinh === '') {
+                $('#errHanhTrinh').text('* Hành trình là bắt buộc');
+                return false;
+            }
+            $('#errHanhTrinh').text('');
+            return true;
+        }
+
+        function kiemTraNgayKhoiHanh() {
+            let ngayKH = new Date($('#txtNgayKH').val());
+            if (isNaN(ngayKH.getTime())) {
+                $('#errNgayKH').text('* Ngày khởi hành không hợp lệ');
+                return false;
+            }
+            
+            let today = new Date();
+            let minDate = new Date();
+            minDate.setDate(today.getDate() + 30); // 30 days from today
+            
+            if (ngayKH <= minDate) {
+                $('#errNgayKH').text('* Ngày khởi hành phải sau ngày hiện tại ít nhất 30 ngày');
+                return false;
+            }
+            $('#errNgayKH').text('');
+            return true;
+        }
+
+        function kiemTraThoiGian() {
+            let thoiGian = $('#txtThoiGian').val().trim();
+            if (thoiGian === '') {
+                $('#errThoiGian').text('* Thời gian là bắt buộc');
+                return false;
+            }
+            $('#errThoiGian').text('');
+            return true;
+        }
+
+        function kiemTraGiaTour() {
+            let giaTour = $('#txtGiaTour').val().trim();
+            if (giaTour === '') {
+                $('#errGiaTour').text('* Giá Tour là bắt buộc');
+                return false;
+            }
+            if (isNaN(giaTour) || parseFloat(giaTour) <= 0) {
+                $('#errGiaTour').text('* Giá Tour phải là số lớn hơn 0');
+                return false;
+            }
+            $('#errGiaTour').text('');
+            return true;
+        }
+
+        function kiemTraAnhDaiDien() {
+            let fileInput = $('#txtAnhDaiDien')[0];
+            if (fileInput.files.length === 0) {
+                $('#errAnhDaiDien').text('* Ảnh đại diện là bắt buộc');
+                return false;
+            }
+            
+            let fileName = fileInput.files[0].name;
+            let validExtensions = /(\.jpg|\.jpeg|\.gif|\.png)$/i;
+            if (!validExtensions.exec(fileName)) {
+                $('#errAnhDaiDien').text('* Chỉ chấp nhận file ảnh (jpg, gif, png)');
+                return false;
+            }
+            $('#errAnhDaiDien').text('');
+            return true;
+        }
+
+        let count = 1;
+        function luuTour() {
+            if (!kiemTraMaTour() || !kiemTraHanhTrinh() || !kiemTraNgayKhoiHanh() || 
+                !kiemTraThoiGian() || !kiemTraGiaTour() || !kiemTraAnhDaiDien()) {
+                alert("Vui lòng nhập thông tin đúng và đầy đủ!");
+                return false;
+            }
+
+            let table = document.getElementById("tblTour").getElementsByTagName('tbody')[0];
+            let newRow = table.insertRow();
+            
+            let maTour = $('#txtMaTour').val();
+            let hanhTrinh = $('#txtHanhTrinh').val();
+            let ngayKH = $('#txtNgayKH').val();
+            let thoiGian = $('#txtThoiGian').val();
+            let giaTour = $('#txtGiaTour').val();
+            let anhDaiDien = $('#txtAnhDaiDien')[0].files[0].name;
+
+            let cell0 = newRow.insertCell(0);
+            let cell1 = newRow.insertCell(1);
+            let cell2 = newRow.insertCell(2);
+            let cell3 = newRow.insertCell(3);
+            let cell4 = newRow.insertCell(4);
+            let cell5 = newRow.insertCell(5);
+            let cell6 = newRow.insertCell(6);
+
+            cell0.innerHTML = count;
+            cell1.innerHTML = maTour;
+            cell2.innerHTML = hanhTrinh;
+            cell3.innerHTML = ngayKH;
+            cell4.innerHTML = thoiGian;
+            cell5.innerHTML = parseFloat(giaTour).toLocaleString('vi-VN') + ' VNĐ';
+            cell6.innerHTML = `<img src="#" alt="${anhDaiDien}" width="50">`;
+
+            count++;
+
+            // Clear the form
+            $('#txtMaTour').val('');
+            $('#txtHanhTrinh').val('');
+            $('#txtNgayKH').val('');
+            $('#txtThoiGian').val('');
+            $('#txtGiaTour').val('');
+            $('#txtAnhDaiDien').val('');
+            
+            // Close modal
+            $('#myModal').modal('hide');
+
+            return true;
+        }
+    </script>
+    <style>
+        a {
+            color: aliceblue;
+            text-decoration: none;
+        }
+
+        li {
+            list-style-type: none;
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        ul {
+            text-align: right;
+        }
+
+        .modal-register {
+            cursor: pointer;
+        }
+
+        .container {
+            border: 1px solid #333;
+            padding: 0;
+        }
+        .modal-body label{
+            width: 150px;
+        }
+        select, input {
+            height: 35px;
+        }
+        .text-danger {
+            font-size: 0.875em;
+            color: red;
+        }
+        .required-field::after {
+            content: " *";
+            color: red;
+        }
+        table th {
+            background-color: #0d6efd;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="../img/banner-5.png" alt="" class="w-100">
+        <ul class="d-flex m-4">
+            <li><a href="#" class="text-primary">Đăng nhập</a></li>
+            <li><a class="text-primary modal-register" data-bs-toggle="modal" data-bs-target="#myModal">Mở tour mới</a></li>
+        </ul>
+        <div class="table-responsive p-3">
+            <h3 class="d-flex justify-content-center fw-light">DANH SÁCH TOUR - DU LỊCH VIỆT</h3>
+            <table class="table table-dark" id="tblTour">
+                <thead>
+                    <tr>
+                        <th scope="col">STT</th>
+                        <th scope="col">Mã tour</th>
+                        <th scope="col">Hành trình</th>
+                        <th scope="col">Ngày khởi hành</th>
+                        <th scope="col">Thời gian</th>
+                        <th scope="col">Giá tour</th>
+                        <th scope="col">Ảnh đại diện</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Modal Thêm Tour -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="text-center w-100">THÔNG TIN TOUR MỚI</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Mã tour -->
+                    <div class="d-flex gap-4 mb-3 align-items-center">
+                        <label for="txtMaTour" class="required-field">Mã tour:</label>
+                        <div class="flex-grow-1">
+                            <input type="text" id="txtMaTour" class="form-control" 
+                                   placeholder="VD: HAN-SGN-06-2023" onblur="kiemTraMaTour()">
+                            <span class="text-danger" id="errMaTour"></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Hành trình -->
+                    <div class="d-flex gap-4 mb-3 align-items-center">
+                        <label for="txtHanhTrinh" class="required-field">Hành trình:</label>
+                        <div class="flex-grow-1">
+                            <input type="text" id="txtHanhTrinh" class="form-control" 
+                                   placeholder="VD: Hà Nội - Sài Gòn" onblur="kiemTraHanhTrinh()">
+                            <span class="text-danger" id="errHanhTrinh"></span>
+                        </div>
+                    </div>
+
+                    <!-- Ngày khởi hành -->
+                    <div class="d-flex gap-4 mb-3 align-items-center">
+                        <label for="txtNgayKH" class="required-field">Ngày khởi hành:</label>
+                        <div class="flex-grow-1">
+                            <input type="date" id="txtNgayKH" class="form-control" onblur="kiemTraNgayKhoiHanh()">
+                            <span class="text-danger" id="errNgayKH"></span>
+                        </div>
+                    </div>
+
+                    <!-- Thời gian -->
+                    <div class="d-flex gap-4 mb-3 align-items-center">
+                        <label for="txtThoiGian" class="required-field">Thời gian:</label>
+                        <div class="flex-grow-1">
+                            <input type="text" id="txtThoiGian" class="form-control" 
+                                   placeholder="VD: 5 ngày 4 đêm" onblur="kiemTraThoiGian()">
+                            <span class="text-danger" id="errThoiGian"></span>
+                        </div>
+                    </div>
+
+                    <!-- Giá tour -->
+                    <div class="d-flex gap-4 mb-3 align-items-center">
+                        <label for="txtGiaTour" class="required-field">Giá tour:</label>
+                        <div class="flex-grow-1">
+                            <input type="number" id="txtGiaTour" class="form-control" 
+                                   placeholder="VD: 5000000" onblur="kiemTraGiaTour()">
+                            <span class="text-danger" id="errGiaTour"></span>
+                        </div>
+                    </div>
+
+                    <!-- Ảnh đại diện -->
+                    <div class="d-flex gap-4 mb-3 align-items-center">
+                        <label for="txtAnhDaiDien" class="required-field">Ảnh đại diện:</label>
+                        <div class="flex-grow-1">
+                            <input type="file" id="txtAnhDaiDien" class="form-control" 
+                                   accept=".jpg,.jpeg,.gif,.png" onchange="kiemTraAnhDaiDien()">
+                            <span class="text-danger" id="errAnhDaiDien"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success w-100" onclick="luuTour()">Lưu Tour</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

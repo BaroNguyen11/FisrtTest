@@ -1,0 +1,109 @@
+/* login */
+.neumorphic {
+    background: #e0e5ec;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px #a3b1c6;
+}
+
+.neumorphic-inset {
+    background: #e0e5ec;
+    border-radius: 20px;
+    box-shadow: inset 10px 10px 10px #a3b1c6, inset -10px -10px 20px #ffffff;
+}
+
+.neumorphic-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+}
+
+h1 {
+    color: #6d7582;
+    margin-bottom: 20px;
+}
+
+.neumorphic-input {
+    padding: 15px;
+    font-size: 16px;
+    color: #6d7582;
+    border: none;
+    outline: none;
+    margin-bottom: 25px;
+}
+
+.neumorphic-input::placeholder {
+    color: #a3b1c6;
+}
+
+.neumorphic-button {
+    padding: 15px 30px;
+    font-size: 16px;
+    width: 40%;
+    color: #c1c9d6;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #383c3f;
+}
+
+.neumorphic-button:active {
+    box-shadow: inset 10px 10px 20px #525354, inset -10px -10px 20px #2e2c2c;
+
+}
+
+.icon-login i {
+    font-size: 30px;
+    color: #6d7582;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.icon-login .facebook:hover {
+    color: #514adf;
+    transform: translateY(-3px);
+}
+
+.icon-login .instagram:hover {
+    background: linear-gradient(to right, #f5af19,#f81d96, #f12711);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    transform: translateY(-3px);
+}
+
+.icon-login .google:hover {
+    background: linear-gradient(to right,#01a9f7, #f5af19,#ed7070);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    transform: translateY(-3px);
+}
+.icon-login .tiktok:hover {
+    background: linear-gradient(to right, #13c2dd, #f40843);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    transform: translateY(-3px);
+}
+
+.register {
+    color: #6d7582;
+    font-size: 18px;
+    margin: 20px 0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.register:hover {
+    color: #3e362f;
+    text-decoration: underline;
+}

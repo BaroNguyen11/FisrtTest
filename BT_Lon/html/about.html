@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HỒ SƠ - TV Store</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../font_awesome/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg position-sticky top-0 ">
+        <div class="container d-flex justify-content-between">
+            <a class="navbar-brand" href="../html/home.html">
+                <img src="../img/logoo.png" alt="Logo" height="30" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto d-flex gap-5">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../html/home.html"> <i
+                                class="fas fa-home"></i> TRANG CHỦ</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active" href="../html/category.html" id="product-link"><i
+                                class="fas fa-box-open"></i> SẢN PHẨM
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../html/deals.html"><i class="fas fa-tags"></i>
+                            KHUYẾN MÃI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../html/contact.html"> <i class="fas fa-envelope"></i> LIÊN
+                            HỆ</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <form class="d-flex justify-content-between align-items-center ms-auto gap-5 form-icon">
+                        <div class="search-wrapper" id="searchBox">
+                            <input type="text" class="search-input" placeholder="Tìm kiếm..." id="searchInput">
+                            <i class="fas fa-search search-button" id="searchBtn"></i>
+                            <div id="searchResults" style="margin-top: 20px; width: 600px; height: 1000px;"></div>
+                        </div>
+                        <a href="../html/cart.html" class="position-relative">
+                            <i class="fas fa-cart-shopping"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                id="cartCount">0</span>
+                        </a>
+                        <div id="userIconContainer" class="position-relative">
+                            <i class="fas fa-user user-icon " data-bs-toggle="modal" data-bs-target="#loginModal"></i>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!-- Nội dung chính -->
+    <section>
+        <div class="container m-5 text-white">
+            <div class="row d=flex justify-content-center align-items-center profile ">
+                <div class="col-md-3">
+                    <img src="../img/login.png" class="m-auto rounded-circle" alt="Avatar" width="150px" height="150px">
+                </div>
+                <div class="col-md-6 ">
+                    <form class="fs-3">
+                        <div class="mb-2">
+                            <label class="form-label">Họ tên: <b>Nguyễn Văn Bảo</b></label>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">MSSV: <b>23647241</b></label>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Lớp: <b>DHKTPM19A</b></label>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Email: <b>bao927471@gmail.com</b></label>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <br><br><br>
+            <div class="row d=flex justify-content-center align-items-center profile">
+                <div class="col-md-3">
+                    <img src="../img/login.png" class="m-auto rounded-circle" alt="Avatar" width="150px" height="150px">
+                </div>
+                <div class="col-md-6">
+                    <form class="fs-3">
+                        <div class="mb-2">
+                            <label class="form-label">Họ tên: <b>Nguyễn Văn Bình</b></label>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">MSSV: <b>23639111</b></label>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Lớp: <b>DHKTPM19A</b></label>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Email: <b>binh123123@gmail.com</b></label>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <img src="../img/logoo.png" alt="Logo" height="40" class="mb-3">
+                    <p>Chuyên cung cấp các sản phẩm TV chất lượng cao với giá cả cạnh tranh nhất thị trường.</p>
+                    <div class="social-icons">
+                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>LIÊN KẾT NHANH</h5>
+                    <ul class="footer-links">
+                        <li><a href="../html/home.html">Trang chủ</a></li>
+                        <li><a href="../html/category.html">Sản phẩm</a></li>
+                        <li><a href="../html/deals.html">Khuyến mãi</a></li>
+                        <li><a href="../html/contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>CHÍNH SÁCH</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Chính sách giao hàng</a></li>
+                        <li><a href="#">Chính sách thanh toán</a></li>
+                        <li><a href="#">Bảo mật thông tin</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>LIÊN HỆ</h5>
+                    <ul class="footer-contact">
+                        <li><ion-icon name="location-outline"></ion-icon> 123 Đường ABC, Quận 1, TP.HCM</li>
+                        <li><ion-icon name="call-outline"></ion-icon> 0901 234 567</li>
+                        <li><ion-icon name="mail-outline"></ion-icon> info@tvstore.com</li>
+                        <li><ion-icon name="time-outline"></ion-icon> 8:00 - 20:00 (T2 - CN)</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2024 TV Store. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL ĐĂNG NHẬP -->
+    <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4 neumorphic" style="border-radius: 20px;">
+                <div class="modal-header border-0">
+                    <h1 class="modal-title fs-4" id="loginModalLabel">Đăng nhập</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                </div>
+                <div class="modal-body d-flex justify-content-center flex-column">
+                    <input type="text" id="loginUsername" class="neumorphic neumorphic-input form-control mb-3"
+                        placeholder="Tên đăng nhập">
+                    <input type="password" id="loginPassword" class="neumorphic neumorphic-input form-control mb-3"
+                        placeholder="Mật khẩu">
+                    <button id="loginBtn" class="neumorphic neumorphic-button mb-2 w-100">Đăng nhập</button>
+                    <div class="d-flex justify-content-between mt-3">
+                        <a href="#" class="register">Quên mật khẩu?</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal"
+                            class="register">Đăng ký</a>
+                    </div>
+                    <p class="text-center text-opacity-100">Hoặc đăng nhập với:</p>
+                    <div class="d-flex justify-content-center gap-3 icon-login">
+                        <i class="fa-brands fa-facebook facebook"></i>
+                        <i class="fa-brands fa-google google"></i>
+                        <i class="fa-brands fa-instagram instagram"></i>
+                        <i class="fa-brands fa-tiktok tiktok"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL ĐĂNG KÝ -->
+    <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4 neumorphic" style="border-radius: 20px;">
+                <div class="modal-header border-0">
+                    <h1 class="modal-title fs-4" id="registerModalLabel">Đăng ký</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                </div>
+                <div class="modal-body d-flex justify-content-center flex-column">
+                    <input type="text" id="regUsername" class="neumorphic neumorphic-input form-control mb-3"
+                        placeholder="Tên đăng nhập">
+                    <input type="password" id="regPassword" class="neumorphic neumorphic-input form-control mb-3"
+                        placeholder="Mật khẩu">
+                    <input type="password" id="confirmPassword" class="neumorphic neumorphic-input form-control mb-3"
+                        placeholder="Nhập lại mật khẩu">
+                    <input type="email" id="regEmail" class="neumorphic neumorphic-input form-control mb-3"
+                        placeholder="Email">
+                    <button id="registerBtn" class="neumorphic neumorphic-button mb-2 w-100">Đăng ký</button>
+                    <p class="text-center">
+                        Đã có tài khoản?
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal"
+                            class="register">Đăng nhập</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal xác nhận đăng xuất -->
+    <div class="modal fade" id="confirmLogoutModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Xác nhận đăng xuất</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                </div>
+                <div class="modal-body">
+                    Bạn có chắc chắn muốn đăng xuất không?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-warning" id="confirmLogoutBtn">Đăng xuất</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- script -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/profile.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="../js/category.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+</body>
+
+</html>

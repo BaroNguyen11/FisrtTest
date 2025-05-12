@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KHUYẾN MÃI - TV Store</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/deal.css">
+    <link rel="stylesheet" href="../font_awesome/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg position-sticky top-0 ">
+        <div class="container d-flex justify-content-between">
+            <a class="navbar-brand" href="../html/home.html">
+                <img src="../img/logoo.png" alt="Logo" height="30" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto d-flex gap-5">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../html/home.html"> <i
+                                class="fas fa-home"></i> TRANG CHỦ</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active" href="../html/category.html" id="product-link"><i
+                                class="fas fa-box-open"></i> SẢN PHẨM
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../html/deals.html"><i class="fas fa-tags"></i>
+                            KHUYẾN MÃI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../html/contact.html"> <i class="fas fa-envelope"></i> LIÊN
+                            HỆ</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <form class="d-flex justify-content-between align-items-center ms-auto gap-5 form-icon">
+                        <div class="search-wrapper" id="searchBox">
+                            <input type="text" class="search-input" placeholder="Tìm kiếm..." id="searchInput">
+                            <i class="fas fa-search search-button" id="searchBtn"></i>
+                            <div id="searchResults" style="margin-top: 20px; width: 600px; height: 1000px;"></div>
+                        </div>
+                        <a href="../html/cart.html" class="position-relative">
+                            <i class="fas fa-cart-shopping"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                id="cartCount">0</span>
+                        </a>
+                        <div id="userIconContainer" class="position-relative">
+                            <i class="fas fa-user user-icon " data-bs-toggle="modal" data-bs-target="#loginModal"></i>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="mt-4 text-white">
+        <div class="row">
+            <aside class="col-md-2 " data-aos="fade-up" data-aos-duration="1000">
+                <h3 class="text-center text-white">KHUYẾN MẠI</h3>
+                <hr>
+                <ul class="d-flex flex-column deal-list ps-0 gap-2">
+                    <li class="text-center deal-select">
+                        <a href="#" class="text-white fs-5 fw-medium ">Tin khuyến mại</a>
+                    </li>
+                    <li class="text-center deal-select">
+                        <a href="#" class="text-white fs-5 fw-medium">Tin khuyến mại</a>
+                    </li>
+                    <li class="text-center deal-select">
+                        <a href="#" class="text-white fs-5 fw-medium">Tin khuyến mại</a>
+                    </li>
+                    <li class="text-center deal-select">
+                        <a href="#" class="text-white fs-5 fw-medium">Tin khuyến mại</a>
+                    </li>
+
+
+                </ul>
+            </aside>
+            <section class="col-md-7" data-aos="fade-up" data-aos-duration="1000">
+                <img src="../img/sale.png" alt="" data-aos="fade-up" data-aos-duration="1000">
+                <h3>Khuyến mãi Giỗ Tổ 10/3 - Mua sắm về nguồn, 3 ngày giá rẻ</h3>
+                <p style="max-width: 900px;">Nghỉ lễ Giỗ Tổ Hùng Vương thường vào đầu mùa hè, cũng là khoảng thời gian
+                    nhiều người có nhu cầu mua
+                    sắm các sản phẩm điện máy, điện lạnh, gia dụng, thiết bị công nghệ… phục vụ cuộc sống cũng như công
+                    việc học tập. Đáp ứng ngay nhu cầu của khách hàng, MediaMart mang đến chương trình khuyến mãi hấp
+                    dẫn <b> “MUA SẮM VỀ NGUỒN - 3 NGÀY GIÁ RẺ KHÔNG GIỜ - CHẦN CHỜ GÌ NỮA!!”</b>. Với hàng loạt sản phẩm
+                    giảm
+                    giá lên đến 50%
+
+                </p>
+                <hr>
+                <div class="d-flex gap-5" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="../img/deal1.png" alt="" style="width: 350px; height: 200px;">
+                    <div>
+                        <a href="#" class="text-secondary fs-4 fw-medium">Thứ 6, 04/4 Khai trương MediaMart Thanh Nê,
+                            Thái
+                            Bình: 10 ngày giá Sốc, Cơn lốc quà tặng
+                            (-50%++)
+                        </a>
+                        <p>Nhằm phục vụ tối đa nhu cầu mua sắm của khách hàng tại Thái Bình, MediaMart tưng bừng khai
+                            trương thêm 1 trung tâm mua sắm mới mang tên MediaMart Thanh Nê tại địa chỉ số số 885 đường
+                            Trần Nhân Tông, Tổ dân phố Cộng Hòa, Thị trấn Kiến Xương, Tỉnh Thái Bình.
+                        </p>
+                    </div>
+
+                </div>
+                <hr>
+                <div class="d-flex gap-5" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="../img/deal2.png" alt="" style="width: 350px; height: 200px;">
+                    <div>
+                        <a href="#" class="text-secondary fs-4 fw-medium">
+                            Sale Khủng 4/4 - Mua Ngay Kẻo Lỡ - Giảm Sốc Đến 50%++
+                        </a>
+                        <p>
+                            Bước vào tháng 4, nhu cầu mua sắm điện máy, gia dụng tăng mạnh khi người tiêu dùng bắt đầu
+                            chuẩn bị cho mùa hè nóng bức. Đây là thời điểm các gia đình nâng cấp điều hòa, tủ lạnh để
+                            đáp ứng nhu cầu làm mát, đồng thời săn các thiết bị gia dụng tiện ích để tối ưu cuộc sống
+                            hàng ngày.
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex gap-5" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="../img/deal3.png" alt="" style="width: 350px; height: 200px;">
+                    <div>
+                        <a href="#" class="text-secondary fs-4 fw-medium">
+                            Đón Hè Rực Rỡ - Giảm Hết Cỡ - Giảm giá lên đến 50%
+                        </a>
+                        <p>
+                            Đón Hè Rực Rỡ – Giảm Hết Cỡ - Giảm giá lên đến 50%
+                            HÈ NÓNG ĐỈNH ĐIỂM SẮP CẬP BẾN – GIẢI NHIỆT NGAY VỚI SIÊU SALE LÊN ĐẾN 50%++
+
+                            Mùa hè đến mang theo cái nóng oi bức, nhu cầu sử dụng các thiết bị làm mát như: điều hòa,
+                            quạt điện, tủ lạnh tăng mạnh hơn bao giờ hết.
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex gap-5" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="../img/deal4.png" alt="" style="width: 350px; height: 200px;">
+                    <div>
+                        <a href="#" class="text-secondary fs-4 fw-medium">
+                            Cá Tháng Tư: Mua Sắm Không Ngờ - Bất Ngờ Trúng Deal
+                        </a>
+                        <p>
+                            Cá tháng Tư – ai cũng có thể "nói đùa", nhưng Deal tại MediaMart thì là thật 100%! Chỉ trong
+                            ngày 1/4, hàng loạt chương trình ưu đãi “độc – lạ – có 1 không 2” được tung ra, khiến ai đến
+                            cũng ngạc nhiên vì giá sốc – quà chất – vận may trúng deal cực hời! Tivi, Tủ lạnh, Máy giặt
+                            đến điều hòa.
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex gap-5" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="../img/deal5.png" alt="" style="width: 350px; height: 200px;">
+                    <div>
+                        <a href="#" class="text-secondary fs-4 fw-medium">
+                            Gia dụng - Mua nhiều giảm nhiều - Giảm thêm 5%
+                        </a>
+                        <p>
+                            Nhằm tri ân khách hàng và tạo cho khách hàng những trải nghiệm mua sắm tốt hơn, siêu thị
+                            điện máy MediaMart dành tặng cho khách hàng mua gia dụng trong tháng 3 quà tặng đặc
+                            biệt:"Gia dụng - Mua nhiều giảm nhiều - Giảm thêm đến 5%".
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex gap-5" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="../img/deal6.png" alt="" style="width: 350px; height: 200px;">
+                    <div>
+                        <a href="#" class="text-secondary fs-4 fw-medium">
+                            ƯU ĐÃI LỚN – FLASH SALE TỦ LẠNH, MÁY GIẶT - GIẢM GIÁ LÊN ĐẾN 44%
+                        </a>
+                        <p>
+                            Việc sở hữu một chiếc tủ lạnh hiện đại hay một chiếc máy giặt chất lượng cao chưa bao giờ dễ
+                            dàng đến thế. Trong khuôn khổ chương trình Flash Sale đặc biệt, MediaMart mang đến cho khách
+                            hàng cơ hội mua sắm các sản phẩm Tủ lạnh.
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex gap-5" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="../img/deal7.png" alt="" style="width: 350px; height: 200px;">
+                    <div>
+                        <a href="#" class="text-secondary fs-4 fw-medium">
+                            Xả Hàng Cuối Tháng - Bay Nửa Giá (-50%)
+                        </a>
+                        <p>
+                            Cuối tháng 3, Mediamart mang đến cơ hội mua sắm cho tất cả các khách hàng sản phẩm điện máy
+                            với mức giá giảm sốc lên đến 50%. Ngoài ra quý khách còn nhận được nhiều ưu đãi hấp dẫn khác
+                            như: trả góp 0%, tặng phiếu mua hàng 10 triệu đồng.
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex gap-5" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="../img/deal8.png" alt="" style="width: 350px; height: 200px;">
+                    <div>
+                        <a href="#" class="text-secondary fs-4 fw-medium">
+                            Nước sạch - Sống khỏe - Máy lọc nước giảm giá đến 50%
+                        </a>
+                        <p>
+                            Nước sạch đóng vai trò quan trọng trong việc bảo vệ sức khỏe và nâng cao chất lượng cuộc
+                            sống. Việc sử dụng nguồn nước tinh khiết giúp loại bỏ các tạp chất có hại, giảm nguy cơ mắc
+                            các bệnh liên quan đến đường tiêu hóa, thận và hệ miễn dịch. Nước sạch là yếu tố thiết yếu
+                            đối với mọi gia đình.
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex gap-5" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="../img/deal9.png" alt="" style="width: 350px; height: 200px;">
+                    <div>
+                        <a href="#" class="text-secondary fs-4 fw-medium">
+                            Đổi cũ lấy mới – Cơ hội nâng cấp thiết bị với giá ưu đãi
+                        </a>
+                        <p>
+                            Bạn có thiết bị điện cũ không còn sử dụng? Máy giặt đã lỗi thời, tủ lạnh không còn làm lạnh
+                            tốt, TV chất lượng kém? Đừng vội vứt bỏ! MediaMart mang đến chương trình "Đổi cũ lấy mới –
+                            Deal hời quá đã" giúp bạn nâng cấp thiết bị gia đình với mức giá ưu đãi hấp dẫn.
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex gap-5" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="../img/deal10.png" alt="" style="width: 350px; height: 200px;">
+                    <div>
+                        <a href="#" class="text-secondary fs-4 fw-medium">
+                            MUA SẮM YÊU THƯƠNG – XẢ HÀNG GIÁ SỐC TẠI MEDIAMART
+                        </a>
+                        <p>
+                            Giảm giá đến 50% - Hàng nghìn sản phẩm chính hãng giá sốc
+
+                            Quý khách đang tìm kiếm các thiết bị điện máy với giá tốt nhất? Đây chính là cơ hội vàng để
+                            sở hữu TV, Tủ lạnh, Máy giặt, và hàng loạt sản phẩm gia dụng với mức giảm giá lên đến 50%.
+                            Chương trình "
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <aside class="col-md-2 ms-3" data-aos="fade-up" data-aos-duration="1000">
+                <h3>TIN MỚI NHẤT</h3>
+                <hr>
+                <div data-aos="fade-up" data-aos-duration="1000">
+                    <img src="../img/sale_sidebar_right.png" alt="" style="width: 320px;">
+                    <a href="#" class="text-secondary fw-medium">THỂ LỆ CHƯƠNG TRÌNH KHUYẾN MẠI CHÀO THÁNG SỐNG KHỎE
+                        TIẾP
+                        BƯỚC
+                        KHỎE, RƯỚC IPHONE</a>
+                </div>
+                <hr>
+                <div data-aos="fade-up" data-aos-duration="1000">
+                    <img src="../img/sale_sidebar_right.png" alt="" style="width: 320px;">
+                    <a href="#" class="text-secondary fw-medium">THỂ LỆ CHƯƠNG TRÌNH KHUYẾN MẠI CHÀO THÁNG SỐNG KHỎE
+                        TIẾP
+                        BƯỚC
+                        KHỎE, RƯỚC IPHONE</a>
+                </div>
+                <hr>
+                <div data-aos="fade-up" data-aos-duration="1000">
+                    <img src="../img/sale_sidebar_right.png" alt="" style="width: 320px;">
+                    <a href="#" class="text-secondary fw-medium">THỂ LỆ CHƯƠNG TRÌNH KHUYẾN MẠI CHÀO THÁNG SỐNG KHỎE
+                        TIẾP
+                        BƯỚC
+                        KHỎE, RƯỚC IPHONE</a>
+                </div>
+                <hr>
+                <div data-aos="fade-up" data-aos-duration="1000">
+                    <img src="../img/sale_sidebar_right.png" alt="" style="width: 320px;">
+                    <a href="#" class="text-secondary fw-medium">THỂ LỆ CHƯƠNG TRÌNH KHUYẾN MẠI CHÀO THÁNG SỐNG KHỎE
+                        TIẾP
+                        BƯỚC
+                        KHỎE, RƯỚC IPHONE</a>
+                </div>
+                <hr>
+                <div data-aos="fade-up" data-aos-duration="1000">
+                    <img src="../img/sale_sidebar_right.png" alt="" style="width: 320px;">
+                    <a href="#" class="text-secondary fw-medium">THỂ LỆ CHƯƠNG TRÌNH KHUYẾN MẠI CHÀO THÁNG SỐNG KHỎE
+                        TIẾP
+                        BƯỚC
+                        KHỎE, RƯỚC IPHONE</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <div class="text-center m-4" data-aos="fade-up" data-aos-duration="1000">
+        <a href="#" class="btn show-more">Xem thêm</a>
+    </div>
+    <!-- Footer -->
+    <footer class="footer py-5" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container text-white">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <img src="../img/logoo.png" alt="Logo" height="40" class="mb-3">
+                    <p>Chuyên cung cấp các sản phẩm TV chất lượng cao với giá cả cạnh tranh nhất thị trường.</p>
+                    <div class="social-icons">
+                        <a href="#"> <i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"> <i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"> <i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"> <i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>LIÊN KẾT NHANH</h5>
+                    <ul class="footer-links">
+                        <li><a href="../html/home.html">Trang chủ</a></li>
+                        <li><a href="../html/category.html">Sản phẩm</a></li>
+                        <li><a href="../html/deals.html">Khuyến mãi</a></li>
+                        <li><a href="../html/contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>CHÍNH SÁCH</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Chính sách giao hàng</a></li>
+                        <li><a href="#">Chính sách thanh toán</a></li>
+                        <li><a href="#">Bảo mật thông tin</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>LIÊN HỆ</h5>
+                    <ul class="footer-contact">
+                        <div class="d-flex gap-2">
+                            <i class="fas fa-location-dot"></i>
+                            <li>123 Đường ABC, Quận 1, TP.HCM</li>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <i class="fas fa-phone"></i>
+                            <li> 0901 234 567</li>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <i class="fas fa-mail-bulk"></i>
+                            <li>info@tvstore.com</li>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <i class="fas fa-clock"></i>
+                            <li> 8:00 - 20:00 (T2 - CN)</li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2024 TV Store. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- MODAL ĐĂNG NHẬP -->
+    <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4 neumorphic" style="border-radius: 20px;">
+                <div class="modal-header border-0">
+                    <h1 class="modal-title fs-4" id="loginModalLabel">Đăng nhập</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                </div>
+                <div class="modal-body d-flex justify-content-center flex-column">
+                    <input type="text" id="loginUsername" class="neumorphic neumorphic-input form-control mb-3"
+                        placeholder="Tên đăng nhập">
+                    <input type="password" id="loginPassword" class="neumorphic neumorphic-input form-control mb-3"
+                        placeholder="Mật khẩu">
+                    <button id="loginBtn" class="neumorphic neumorphic-button mb-2 w-100">Đăng nhập</button>
+                    <div class="d-flex justify-content-between mt-3">
+                        <a href="#" class="register">Quên mật khẩu?</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal"
+                            class="register">Đăng ký</a>
+                    </div>
+                    <p class="text-center text-opacity-100">Hoặc đăng nhập với:</p>
+                    <div class="d-flex justify-content-center gap-3 icon-login">
+                        <i class="fa-brands fa-facebook facebook"></i>
+                        <i class="fa-brands fa-google google"></i>
+                        <i class="fa-brands fa-instagram instagram"></i>
+                        <i class="fa-brands fa-tiktok tiktok"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL ĐĂNG KÝ -->
+    <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4 neumorphic" style="border-radius: 20px;">
+                <div class="modal-header border-0">
+                    <h1 class="modal-title fs-4" id="registerModalLabel">Đăng ký</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                </div>
+                <div class="modal-body d-flex justify-content-center flex-column">
+                    <input type="text" id="regUsername" class="neumorphic neumorphic-input form-control mb-3"
+                        placeholder="Tên đăng nhập">
+                    <input type="password" id="regPassword" class="neumorphic neumorphic-input form-control mb-3"
+                        placeholder="Mật khẩu">
+                    <input type="password" id="confirmPassword" class="neumorphic neumorphic-input form-control mb-3"
+                        placeholder="Nhập lại mật khẩu">
+                    <input type="email" id="regEmail" class="neumorphic neumorphic-input form-control mb-3"
+                        placeholder="Email">
+                    <button id="registerBtn" class="neumorphic neumorphic-button mb-2 w-100">Đăng ký</button>
+                    <p class="text-center">
+                        Đã có tài khoản?
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal"
+                            class="register">Đăng nhập</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal xác nhận đăng xuất -->
+    <div class="modal fade" id="confirmLogoutModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Xác nhận đăng xuất</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                </div>
+                <div class="modal-body">
+                    Bạn có chắc chắn muốn đăng xuất không?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-warning" id="confirmLogoutBtn">Đăng xuất</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- script -->
+    <script src="../jquery/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/aos.min.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/deals.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="../js/category.js"></script>
+</body>
+
+</html>

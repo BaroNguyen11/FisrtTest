@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bài 4</title>
+    <style>
+        .container{
+            width: 850px;
+            border: 1px solid white;
+            box-shadow: 1px 1px 10px gray;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+           
+        }
+       .top {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+       }
+       #body-hr{
+        width: 98%;
+        border: 2px solid orange;
+        margin-bottom: 0;
+       }
+        .content{
+            display: flex;
+            flex-grow: 1;
+            align-items: stretch;
+        }
+        .body{
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+        }
+        .content-left{
+            width: 20%;
+            background-image: url("../Bai4/back.jpg");
+            background-repeat: repeat-y;
+            display: flex;
+            flex-direction: column;
+            padding-left: 10px;
+            box-sizing: border-box;
+            
+        }
+        .content-left a{
+            text-decoration: none;
+            font-size: 20px;
+            margin-bottom: 10px;
+            padding: 4px;
+            border-bottom: 1px dashed black;
+            box-sizing: border-box;
+        }
+       .content-right{
+        position: relative;
+        width: 80%;
+        padding-left: 10px;
+       }
+       .content-right img{
+            margin: 0;
+            padding: 0;
+       }
+       .content-right h2{
+        color: orange;
+        font-size: 30px;
+       }
+      .footer-hr{
+        width: 98%;
+        border: 2px solid orange;
+        margin-bottom: 0;
+      }
+      .content-right .footer{
+        margin: 0;
+        padding: 5px;
+        color: orange;
+      }
+      .box{
+        position: relative;
+        border: 1px solid black;
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5);
+        color: rgb(232, 80, 25);
+        background-color: rgb(250, 250, 250);
+        overflow: hidden; 
+      }
+      .box1{
+        position: absolute;
+        top: 400px;
+        width: 150px;
+        height: 100px;
+        font-size: 14px;
+        justify-content: center;
+        align-items: center;
+        padding-left: 2px;
+      }
+      .box2{
+        width: 150px;
+        right: -490px;
+        top: -750px;
+        font-size: 14px;
+        justify-content: center;
+        align-items: center;
+        padding-left: 2px;
+      }
+      .box3{
+        width: 150px;
+        right: -500px;
+        top: -400px;
+        font-size: 14px;
+        justify-content: center;
+        align-items: center;
+        padding-left: 2px;
+      }
+      .footer-hr{
+        position: absolute;
+        bottom: 30px;
+      }
+      .footer{
+        position: absolute;
+        bottom: 0;
+      }
+      .image{
+        width: 600px;
+        height: 700px;
+      }
+      .table{
+        height: 100px;
+      }
+    </style>
+</head>
+<body>
+        <div class="container">
+            <!-- header -->
+             <div class="header">
+                <div class="top">
+                    <img src="../Bai4/scraps.jpg" alt="">   
+    
+                </div>
+             </div>
+             <!-- body -->
+              <div class="body">
+                <hr id="body-hr">
+                <div class="content">
+                    <div class="content-left">
+                        <a href="#">Home</a>
+                        <a href="#">Getting Started</a>
+                        <a href="#">Scrapbooking Tips</a>
+                        <a href="#">Supply List</a>
+                        <a href="#">Online Classes</a>
+                        <a href="#"> Sample Pages</a>
+                        <a href="#">Online Store</a>
+                        <a href="#">Shopping Cart</a>
+                        <a href="#">Checkout</a>
+                        <a href="#">Your Account</a>
+                        <a href="#">Order Status</a>
+                        <a href="#">Wish List</a>
+                        <a href="#">Customer Service</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Newsletter</a>
+                        <a href="#">FAQ</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                    <div class="content-right">
+                        <div>
+                        <h2>Samples from Online Scrapbooks</h2>
+                        <img src="../Bai4/sample.jpg" alt="" class="image">
+                        <hr class="footer-hr">
+                        <p class="footer">Online Scraobooks - 212 Sunset Drive - Richmond, KY 40475 - (859) 555-8100</p>
+                        </div>
+                        <div class="table">
+                            <div >
+                                <p class="box box1">
+                                    This tutorial will get you started with CSS in just a few hours. It is easy to understand and it will teach you all the sophisticated techniques
+                                </p>
+                            </div>
+                            <div >
+                                <p class="box box2">
+                                    Cascading Style Sheets (CSS) is a fantastic tool to add layout to your websites. It can save you a lot of time and it enables you to design websites in a completely new way. CSS is a must for anyone working with web design.
+                                </p>
+                            </div>
+                            <div>
+                                <p class="box box3">
+                                    Learning CSS is fun. As you go along through the tutorial, remember to take enough time to properly experiment with what you learn in each lesson.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+               
+              </div>
+        </div>
+</body>
+</html>

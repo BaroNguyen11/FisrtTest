@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        table, td, th{
+            border: 1px solid;
+            align-content: center;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#slTxt1, #slTxt2, #slTxt3, #slTxt4, #slTxt5").blur(function(){
+                let sl1=  parseFloat($("#slTxt1").val() || 0);    let price1 = parseInt($("#gia1").text());
+                let sl2=  parseFloat($("#slTxt2").val() || 0);    let price2 = parseInt($("#gia2").text());
+                let sl3=  parseFloat($("#slTxt3").val() || 0);    let price3 = parseInt($("#gia3").text());
+                let sl4=  parseFloat($("#slTxt4").val() || 0);    let price4 = parseInt($("#gia4").text());
+                let sl5=  parseFloat($("#slTxt5").val() || 0);    let price5 = parseInt($("#gia5").text());
+
+                let tong = sl1 * price1 + sl2 * price2 + sl3 * price3 + sl4 * price4 + sl5 * price5;-
+
+                $("#thanhTien").text(tong);
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="col-6 mx-auto">
+        <table class="table">
+            <tr>
+                <th>STT</th>
+                <th>Hình ảnh</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><img src="../image/h1.png" alt=""></td>
+                <td id="gia1">20000</td>
+                <td><input type="text" id="slTxt1"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><img src="../image/h2.png" alt=""></td>
+                <td id="gia2">40000</td>
+                <td><input type="text" id="slTxt2"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><img src="../image/h3.png" alt=""></td>
+                <td id="gia3">30000</td>
+                <td><input type="text" id="slTxt3"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><img src="../image/h4.png" alt=""></td>
+                <td id="gia4">50000</td>
+                <td><input type="text" id="slTxt4"></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><img src="../image/h5.png" alt=""></td>
+                <td id="gia5">30000</td>
+                <td><input type="text" id="slTxt5"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Tổng thành tiền</td>
+                <td id="thanhTien">0</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

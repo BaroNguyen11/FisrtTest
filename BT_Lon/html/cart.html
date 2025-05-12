@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng - TV</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../font_awesome/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg position-sticky top-0 ">
+        <div class="container d-flex justify-content-between">
+            <a class="navbar-brand" href="../html/home.html">
+                <img src="../img/logoo.png" alt="Logo" height="30" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto d-flex gap-5">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../html/home.html"> <i
+                                class="fas fa-home"></i> TRANG CHỦ</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="../html/category.html" id="product-link"><i
+                                class="fas fa-box-open"></i> SẢN PHẨM
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/deals.html"><i class="fas fa-tags"></i>
+                            KHUYẾN MÃI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/contact.html"> <i
+                                class="fas fa-envelope"></i> LIÊN HỆ</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <form class="d-flex justify-content-between align-items-center ms-auto gap-5 form-icon">
+                        <div class="search-wrapper" id="searchBox">
+                            <input type="text" class="search-input" placeholder="Tìm kiếm..." id="searchInput">
+                            <i class="fas fa-search search-button" id="searchBtn"></i>
+                            <div id="searchResults" style="margin-top: 20px; width: 600px; height: 1000px;"></div>
+                        </div>
+                        <a href="../html/cart.html" class="position-relative">
+                            <i class="fas fa-cart-shopping"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                id="cartCount">0</span>
+                        </a>
+                        <div id="userIconContainer" class="position-relative">
+                            <i class="fas fa-user user-icon " data-bs-toggle="modal" data-bs-target="#loginModal"></i>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+   
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <h2 class="mb-4 text-white">Giỏ hàng của bạn</h2>
+                <div class="card mb-4">
+                    <div class="card-body p-4">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" style="width: 50%">Sản phẩm</th>
+                                        <th scope="col">Đơn giá</th>
+                                        <th scope="col">Số lượng</th>
+                                        <th scope="col">Thành tiền</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cartItems">
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="../img/sp20.png" alt="TV Sony 4K"
+                                                    style="width: 80px; height: 60px; object-fit: cover;" class="me-3">
+                                                <div>
+                                                    <h6 class="mb-1">TV Sony 4K 55 inch X80K</h6>
+                                                    <small class="text-muted">Mã SP: SONY-X80K-55</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>15.990.000 ₫</td>
+                                        <td>
+                                            <div class="input-group quantity-selector" style="width: 120px;">
+                                                <button class="btn btn-outline-secondary minus-btn"
+                                                    type="button">-</button>
+                                                <input type="text" class="form-control text-center quantity-input"
+                                                    value="1">
+                                                <button class="btn btn-outline-secondary plus-btn"
+                                                    type="button">+</button>
+                                            </div>
+                                        </td>
+                                        <td>15.990.000 ₫</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-danger remove-btn">
+                                                <ion-icon name="trash-outline"></ion-icon>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="../img/sp25.png" alt="Samsung QLED"
+                                                    style="width: 80px; height: 60px; object-fit: cover;" class="me-3">
+                                                <div>
+                                                    <h6 class="mb-1">Samsung QLED 65 inch Q70C</h6>
+                                                    <small class="text-muted">Mã SP: SAMSUNG-Q70C-65</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>22.490.000 ₫</td>
+                                        <td>
+                                            <div class="input-group quantity-selector" style="width: 120px;">
+                                                <button class="btn btn-outline-secondary minus-btn"
+                                                    type="button">-</button>
+                                                <input type="text" class="form-control text-center quantity-input"
+                                                    value="1">
+                                                <button class="btn btn-outline-secondary plus-btn"
+                                                    type="button">+</button>
+                                            </div>
+                                        </td>
+                                        <td>22.490.000 ₫</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-danger remove-btn">
+                                                <ion-icon name="trash-outline"></ion-icon>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="../html/category.html" class="btn btn-buynow">
+                                <ion-icon name="arrow-back-outline" class="me-2"></ion-icon>Tiếp tục mua sắm
+                            </a>
+                            <button class="btn btn-outline-danger clearCart" id="clearCartBtn">
+                                <ion-icon name="trash-outline" class="me-2"></ion-icon>Xóa giỏ hàng
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- ship -->
+                <div class="card mb-4">
+                    <div class="card-body p-4">
+                        <h5 class="card-title mb-4">Phương thức vận chuyển</h5>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="shippingMethod" id="standardShipping"
+                                checked>
+                            <label class="form-check-label" for="standardShipping">
+                                <strong>Giao hàng tiêu chuẩn</strong> - Miễn phí (3-5 ngày)
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="shippingMethod" id="fastShipping">
+                            <label class="form-check-label" for="fastShipping">
+                                <strong>Giao hàng nhanh</strong> - 50.000 ₫ (1-2 ngày)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- note -->
+                <div class="card">
+                    <div class="card-body p-4">
+                        <h5 class="card-title mb-4">Ghi chú đơn hàng</h5>
+                        <textarea class="form-control" rows="3"
+                            placeholder="Ghi chú cho đơn hàng (không bắt buộc)"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- tóm tắt -->
+            <div class="col-lg-4">
+                <div class="card" style="top: 20px;">
+                    <div class="card-body p-4">
+                        <h5 class="card-title mb-4">Tóm tắt đơn hàng</h5>
+
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Tạm tính:</span>
+                            <span>38.480.000 ₫</span>
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Phí vận chuyển:</span>
+                            <span>0 ₫</span>
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Giảm giá:</span>
+                            <span class="text-danger">-1.000.000 ₫</span>
+                        </div>
+
+                        <hr>
+
+                        <div class="d-flex justify-content-between mb-4">
+                            <strong>Tổng cộng:</strong>
+                            <strong class="text-primary">37.480.000 ₫</strong>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="voucher" class="form-label">Mã giảm giá</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="voucher" placeholder="Nhập mã giảm giá">
+                                <button class="btn btn-buynow" type="button">Áp dụng</button>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-buynow w-100 py-3" id="checkoutBtn">
+                            <ion-icon name="card-outline" class="me-2"></ion-icon>Tiến hành thanh toán
+                        </button>
+
+                        <div class="mt-3 text-center">
+                            <small class="text-muted">Bằng cách đặt hàng, bạn đồng ý với <a href="#">Điều khoản dịch
+                                    vụ</a> của chúng tôi</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- footer -->
+    <footer class="footer py-5" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container text-white">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <img src="../img/logoo.png" alt="Logo" height="40" class="mb-3">
+                    <p>Chuyên cung cấp các sản phẩm TV chất lượng cao với giá cả cạnh tranh nhất thị trường.</p>
+                    <div class="social-icons">
+                        <a href="#"> <i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"> <i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"> <i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"> <i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>LIÊN KẾT NHANH</h5>
+                    <ul class="footer-links">
+                        <li><a href="../html/home.html">Trang chủ</a></li>
+                        <li><a href="../html/category.html">Sản phẩm</a></li>
+                        <li><a href="../html/deals.html">Khuyến mãi</a></li>
+                        <li><a href="../html/contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>CHÍNH SÁCH</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Chính sách giao hàng</a></li>
+                        <li><a href="#">Chính sách thanh toán</a></li>
+                        <li><a href="#">Bảo mật thông tin</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>LIÊN HỆ</h5>
+                    <ul class="footer-contact">
+                        <div class="d-flex gap-2">
+                            <i class="fas fa-location-dot"></i>
+                            <li>123 Đường ABC, Quận 1, TP.HCM</li>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <i class="fas fa-phone"></i>
+                            <li> 0901 234 567</li>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <i class="fas fa-mail-bulk"></i>
+                            <li>info@tvstore.com</li>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <i class="fas fa-clock"></i>
+                            <li> 8:00 - 20:00 (T2 - CN)</li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2024 TV Store. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- script -->
+    <script src="../jquery/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/aos.min.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="../js/category.js"></script>
+</body>
+
+</html>

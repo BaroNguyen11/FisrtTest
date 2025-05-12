@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> bài 1</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 1200px;
+           
+            border: 1px solid red;
+            margin: 0 auto;
+        }
+        .content{
+            display: flex;
+        }
+        h1{
+            text-align: center;
+            color: red;
+            font-weight: bold;
+            font-style: italic;
+            text-shadow: 10px 10px 5px #df4242;
+        }
+        .menu{
+            display: flex;
+            padding-left: 30px;
+            background-color: #f4b6c2;
+            height: 40px;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .menu a {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1px 20px; 
+            height: 100%; 
+        }
+        
+      .menu a:not(:last-child){
+          border-right: 1px solid black;
+      }
+     ul{
+        list-style: none;
+        float: left;
+     }
+     .menu-left li { 
+        height: 25px;
+        width: 200px;
+        border: 1px solid black;
+        border-radius: 20px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-bottom:10px;
+        background-color: #f4b6c2;
+     }
+     .menu-left{
+        padding-left: 0;
+     }
+     .left img{
+       border-radius: 50%;
+       width: 200px;
+       height: 100px;
+       box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+     }
+     .center{
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+       
+     }
+     h2{
+        margin: 0 auto;  
+        color: red;
+        font-size: 40px;
+        background-color: #f4b6c2;
+        text-align: center;
+        width: 50%;
+     }
+     .top{
+        padding-top: 10px;    
+     }
+     .left{
+        width: 20%;
+     }
+     .right{
+        width: 20%;
+        height: 400px;
+        background-color: black;
+        color: white;
+     }
+     .right .hd{
+        padding: 0;
+        margin: 0;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+
+     }
+     .right .events img{
+        margin-left: 20px;
+     }
+     .events img{
+        width: 200px;
+        height: 100px;
+       
+     }
+     .events p{
+        margin-left: 20px;
+        margin-top: 0;
+        font-size: 10px;
+        width: 200px;
+     }
+     #reg{
+        margin-left: 20px;
+        margin-top: 20px;
+     }
+     .infor{
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        
+     }
+     .infor input{
+        margin-bottom: 10px;
+        height: 40px;
+        width: 45%;
+     }
+     .info{
+        padding-top: 10px;
+     }
+     .info select{
+        height: 43px;
+        width: 332px;
+     }
+    .info input{
+       margin-left: 60px;
+    }
+    .information{
+        padding-top: 10px;
+    }
+    .information textarea{
+        
+        width: 100%;
+        height: 40px;
+    }
+    .footer {
+        text-align: center;
+        padding: 10px;
+        background-color: pink;
+        font-style: italic;
+        margin-top: 10px;
+        color: white;
+        font-size: 20px;
+    }
+    
+    </style>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+        <div class="container">
+            <!-- header -->
+               <h1>EXAMPLE CAFE MENU</h1>
+               <div class="menu">
+                <a href="#">
+                    <ion-icon name="home-outline" class="home"></ion-icon> 
+                </a>
+                <a href="#">Starter</a> 
+                <a href="#">Main Courses</a> 
+                <a href="#">Desserts</a> 
+                <input type="text"> <button>Go</button>
+            </div>
+            <!-- body -->
+            <div class="content">
+                <div class="left">
+                    <ul class="menu-left">
+                        <li>Cafe Latte</li>
+                        <li>Capuchino</li>
+                        <li>Ocean Blue</li>
+                        <li>Ice-cream Cafe</li>
+                        <li>Order Online</li>
+                        <img src="../Bai1/company.png" alt="">
+                    </ul>
+                    
+                </div>
+    
+                <div class="center">
+    
+                    <div class="top">
+                        <h2>Starter</h2>
+                        <ul>
+                            <li>Chesnut and Mushroom Goujons <a href="#">(v)</a></li>
+                            <li>Goat Cheese <a href="#">(v)</a></li>
+                            <li>HONEY SOY CHICKEN KEBABS <a href="#">(V)</a></li>
+                            <li>Seafood Salad <a href="#">(v)</a></li>
+                            <a href="#" class="top">Back to top</a>
+                        </ul>
+                        
+                    </div>
+    
+                    <div>
+                        <h2>Desserts</h2>
+                        <ul>
+                            <li>Lemon Sorbet <a href="#">(v)</a></li>
+                            <li>Chocolate Mud Pie <a href="#">(v)</a></li>
+                            <li>Pecan Pie <a href="#">(V)</a></li>
+                            <li>Selection of fine Cheeses from Around the World <a href="#">(v)</a></li>
+                            <a href="#" class="top">Back to top</a>
+                        </ul>
+                        
+                    </div>
+    
+                    <div >
+                        <h2>INFORMATION</h2>
+                        <div class="infor">
+                        <input type="text" placeholder="First Name">
+                        <input type="text" placeholder="Last Name">
+                        </div>
+                        <div class="infor">
+                        <input type="email" placeholder="Email">
+                        <input type="text" placeholder="Telephone">
+                        </div>
+                        <div class="info">
+                            <select>
+                                <option>USA</option>
+                                <option>Viet Nam</option>
+                                <option>Chinese</option>
+                                <option>Japan</option>
+                            </select>
+
+                            <input type="radio" name="nationality"> Vietnamese
+                            <input type="radio" name="nationality"> Foreigner
+                        </div>
+                        <div class="information">
+                            <textarea placeholder="Comment"></textarea>
+                        </div>
+                        <button type="submit">Submit</button>
+                    <button type="reset">Cancel</button>
+                    </div>
+    
+                </div>
+    
+                <div class="right">
+                        <p class="hd">Events</p>
+                        <div class="events">
+                            <p class="hd" id="reg"> Regular Meetings</p>
+                            <img src="../Bai1/meeting.png" alt="" >
+                            <p>
+                                Host your regular team meetings or activities in the comfort of your own private room. <a href="#">Read more...</a>
+                            </p>
+                        </div>
+                        <div class="events">
+                            <p class="hd" id="reg"> Product Launches</p>
+                            <img src="../Bai1/launch.png" alt="" >
+                            <p>
+                                Launch your product with ease in a space that truly fits its image. <a href="#">Read more...</a>
+                            </p>
+                        </div>
+                </div>
+            </div>
+            <!-- footer -->
+            <div class="footer">ABC Company © - 12345678 - abccoffee@gmail.com</div>
+
+        </div>
+</body>
+</html>

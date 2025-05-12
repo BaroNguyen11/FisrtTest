@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Add jQuery before your script -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            const hocPhiTheoKhoa = {
+                '2': '5,000,000',
+                '4': '8,000,000',
+                '6': '9,000,000'
+            };
+    
+            $('#khoahoc').change(function () {
+                const khoa = $(this).val();
+                if (hocPhiTheoKhoa[khoa]) {
+                    $('#txthp').val(hocPhiTheoKhoa[khoa]);
+                    $('#errkhoahoc').text('');
+                } else {
+                    $('#txthp').val('');
+                    $('#errkhoahoc').text('* Vui lòng chọn khóa học!');
+                }
+            });
+        });
+        
+        function kiemtraten() {
+            let ten = $('#txtten').val().trim();
+            let regex = /^([A-Z][a-z]+)(\s[A-Z][a-z]+)+$/;
+            if (ten === '' || !regex.test(ten)) {
+                $('#errten').text('Họ tên không hợp lệ. Mỗi từ viết hoa và >= 2 từ.');
+                return false;
+            }
+            $('#errten').text('');
+            return true;
+        }
+
+        function kiemtrasdt() {
+            let sdt = $('#txtsdt').val().trim();
+            let regex = /^\d{3}-\d{7}$/;
+            if (!regex.test(sdt)) {
+                $('#errsdt').text('SĐT phải theo dạng XXX-YYYYYYY');
+                return false;
+            }
+            $('#errsdt').text('');
+            return true;
+        }
+
+        function kiemtratuoi() {
+            let ns = new Date($('#txtns').val());
+            if (isNaN(ns.getTime())) {
+                $('#errns').text('Ngày sinh không hợp lệ');
+                return false;
+            }
+            
+            let today = new Date();
+            let age = today.getFullYear() - ns.getFullYear();
+            if (today.getMonth() < ns.getMonth() || 
+                (today.getMonth() === ns.getMonth() && today.getDate() < ns.getDate())) {
+                age--;
+            }
+            
+            if (age < 15 || age > 18) {
+                $('#errns').text('Tuổi phải từ 15 đến 18');
+                return false;
+            }
+            $('#errns').text('');
+            return true;
+        }
+
+        function kiemtrakhoahoc() {
+            if ($('#khoahoc').val() === '') {
+                $('#errkhoahoc').text('Vui lòng chọn khóa học');
+                return false;
+            }
+            $('#errkhoahoc').text('');
+            return true;
+        }
+
+        function kiemtrahocphi() {
+            if ($('#txthp').val() === '') {
+                $('#errhp').text('Học phí không được để trống');
+                return false;
+            }
+            $('#errhp').text('');
+            return true;
+        }
+
+        let count = 1;
+        function Singin() {
+            if (!kiemtraten() || !kiemtrasdt() || !kiemtratuoi() || !kiemtrakhoahoc() || !kiemtrahocphi()) {
+              alert("Phải nhập thông tin đúng và đầy đủ!");
+              return false;
+            }
+          
+            let hoten = $('#txtten').val();
+            let sdt = $('#txtsdt').val();
+            let ngaysinh = $('#txtns').val();
+            let diachi = $('#txtdiachi').val();
+            let khoa = $('#khoahoc').val() + " tuần";
+            let hocphi = $('#txthp').val();
+          
+            let row = `<tr>
+              <td>${count++}</td>
+              <td>${hoten}</td>
+              <td>${sdt}</td>
+              <td>${ngaysinh}</td>
+              <td>${diachi}</td>
+              <td>${khoa}</td>
+              <td>${hocphi}</td>
+            </tr>`;
+          
+            $('#tblinfo tbody').append(row);
+          }
+          
+    </script>
+    <style>
+        a {
+            color: aliceblue;
+            text-decoration: none;
+        }
+
+        li {
+            list-style-type: none;
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        ul {
+            text-align: right;
+        }
+
+        .modal-register {
+            cursor: pointer;
+        }
+
+        .container {
+            border: 1px solid #333;
+            padding: 0;
+        }
+        .modal-body label{
+            width: 120px;
+        }
+        select,input{
+            height: 35px;
+        }
+        .text-danger {
+            font-size: 0.875em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="../img/website.png" alt="" class="w-100">
+        <ul class="d-flex m-4">
+            <li><a href="#" class="text-primary">Trang chủ</a></li>
+            <li><a class="text-primary modal-register" data-bs-toggle="modal" data-bs-target="#myModal">Đăng ký</a></li>
+        </ul>
+        <div class="table-responsive p-0">
+            <h3 class="d-flex justify-content-center fw-light">LIST OF MEMBERS</h3>
+            <table class="table table-primary" id="tblinfo">
+                <thead>
+                    <tr>
+                        <th scope="col"> STT</th>
+                        <th scope="col"> Họ và tên</th>
+                        <th scope="col"> Số điện thoại</th>
+                        <th scope="col"> Ngày sinh</th>
+                        <th scope="col"> Địa chỉ</th>
+                        <th scope="col"> Khóa học</th>
+                        <th scope="col"> Học phí</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="modal" id="myModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <h2 class="text-center w-100"> THÔNG TIN HỌC VIÊN</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex gap-4 mb-3">
+                        <label for="txtten">Họ và tên:</label>
+                        <div class="flex-grow-1">
+                            <input type="text" name="txtten" id="txtten" placeholder="Nhập họ tên..."
+                                class="form-control" required onblur="kiemtraten()">
+                            <span class="text-danger" id="errten">*</span>
+                        </div>
+                    </div>
+                    <!-- Số điện thoại -->
+                    <div class="d-flex gap-4 mb-3">
+                        <label for="txtsdt" class="pt-2">Số điện thoại:</label>
+                        <div class="flex-grow-1">
+                            <input type="text" name="txtsdt" id="txtsdt" placeholder="XXX-YYYYYYY"
+                                class="form-control" required onblur="kiemtrasdt()">
+                            <span class="text-danger" id="errsdt">*</span>
+                        </div>
+                    </div>
+
+                    <!-- Ngày sinh -->
+                    <div class="d-flex gap-4 mb-3">
+                        <label for="txtns" class="pt-2">Ngày sinh:</label>
+                        <div class="flex-grow-1">
+                            <input type="date" name="txtns" id="txtns" class="form-control" required
+                                onblur="kiemtratuoi()">
+                            <span class="text-danger" id="errns">*</span>
+                        </div>
+                    </div>
+
+                    <!-- Địa chỉ -->
+                    <div class="d-flex gap-4 mb-3">
+                        <label for="txtdiachi" class="pt-2">Địa chỉ:</label>
+                        <div class="flex-grow-1">
+                            <input type="text" name="txtdiachi" id="txtdiachi" placeholder="Địa chỉ..."
+                                class="form-control">
+                        </div>
+                    </div>
+
+                    <!-- Khóa học -->
+                    <div class="d-flex gap-4 mb-3">
+                        <label for="khoahoc" class="pt-2">Khóa học:</label>
+                        <div class="flex-grow-1">
+                            <select class="form-select" id="khoahoc" required onchange="kiemtrakhoahoc()">
+                                <option value="">-- Chọn khóa học --</option>
+                                <option value="2">2 tuần</option>
+                                <option value="4">4 tuần</option>
+                                <option value="6">6 tuần</option>
+                            </select>
+                            <span class="text-danger" id="errkhoahoc">*</span>
+                        </div>
+                    </div>
+
+                    <!-- Học phí -->
+                    <div class="d-flex gap-4 mb-3">
+                        <label for="txthp" class="pt-2">Học phí:</label>
+                        <div class="flex-grow-1">
+                            <input type="text" name="txthp" id="txthp" placeholder="Số tiền..."
+                                class="form-control" required readonly>
+                            <span class="text-danger" id="errhp">*</span>
+                        </div>
+                    </div>                    
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success w-100" data-bs-dismiss="modal"
+                        onclick="Singin()">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

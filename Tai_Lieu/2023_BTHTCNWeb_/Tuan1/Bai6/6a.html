@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 600px;
+            background-color: rgb(69, 188, 232);
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid black;
+            box-shadow: 5px 5px 10px gray;
+        }
+        .logo {
+            background-color: cyan;
+            width: 250px;
+            padding: 10px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 15px;
+            border: 3px solid black;
+            box-shadow: 5px 5px 10px gray;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .logo hr {
+            border: none;
+            height: 3px;
+            background-color: black;
+            width: 100%;
+            margin: 5px 0;
+        }
+        .icon {
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            font-size: 20px;
+        }
+    
+        .form-group {
+            display: flex;
+            align-items: center ;
+            margin-bottom: 10px;
+        }
+        .form-group .label {
+            width: 200px;
+            font-weight: bold;
+        }
+        .form-group input,select,textarea{
+           height: 20px;
+            border: 1px solid black;    
+        }
+        .form-group input[type="text"],
+        .form-group input[type="date"],
+        .form-group select {
+            width: 100%;
+        }
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .btn{
+            text-align: center;
+            margin-top: 10px;
+
+        }
+        .middle{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+  
+        <div class="logo">
+            <div class="icon">⚡</div>
+            Jackson
+            <hr>
+            Electronics
+        </div>
+        <h3 class="middle">Registration Form</h3>
+        <h5 class="middle">Register your Jackson Electronics product here</h5>
+        <form action="">
+            <div class="form-group">
+                <label class="label">First name:</label>
+                <input type="text"style="width: 180px;">
+                <label class="label">Last name:</label>
+                <input type="text" style="width: 128px;">
+            </div>
+
+           <div class="form-group">
+                <label class="label">Address #1:</label>
+                <input type="text" >
+           </div>
+           <div class="form-group">
+                <label class="label">Address #2:</label>
+                <input type="text" >
+                
+           </div>
+          
+           <div class="form-group">
+                <label class="label">City:</label>
+                <input type="text" class="city--state--zip" style="width: 200px;">
+                <label >State:</label>
+                <input type="text" class="city--state--zip" style="width: 110px;">
+                <label >Zip:</label>
+                <input type="text" class="city--state--zip" style="width: 99px;">
+            </div>
+
+            <div class="form-group">
+                <label class="label">Country:</label>
+                <select class="country">
+                    <option>United States</option>
+                    <option>Canada</option>
+                    <option>United Kingdom</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <hr>
+            <div class="form-group">
+                <label class="label">Product:</label>
+                <select>
+                    <option>ScanMaster</option>
+                    <option>Printer</option>
+                    <option>Monitor</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label class="label">Date Purchased:</label>
+                <input type="date" >
+            </div>
+             <div class="form-group">
+                <label class="label">Serial #:</label>
+                <input type="text">
+             </div>
+
+              
+                <div class="form-group">
+                    <label class="label">Used for:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="use"> Home</label>
+                        <label><input type="radio" name="use"> Business</label>
+                        <label><input type="radio" name="use"> Government</label>
+                        <label><input type="radio" name="use"> Educational Institution</label>
+                        <label><input type="radio" name="use"> Other</label>
+                    </div>
+                </div>
+              
+                <div class="form-group">
+                    <label class="label">System:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox"> Windows</label>
+                        <label><input type="checkbox"> Macintosh</label>
+                        <label><input type="checkbox"> UNIX</label>
+                        <label><input type="checkbox"> Other</label>
+                    </div>
+                </div>
+             
+              <hr>
+              <div class="form-group">
+                <label class="label">Comments?:</label>
+                <textarea rows="4" style="width: 100%;"></textarea>
+            </div>
+            <div class="btn">
+                <button type="submit">Click to register</button>
+                <button type="submit">Click to cancel</button>
+            </div>
+             
+        </form>
+    </div>
+</body>
+</html>

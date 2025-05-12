@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+    <style>
+        .container {
+            width: 900px;
+            border: 1px solid white;
+            margin: 0 auto;
+            background-image: linear-gradient(0, rgb(47, 120, 203), rgb(124, 179, 243));
+            color: white;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px;
+        }
+        .header-left {
+            display: flex;
+            gap: 20px;
+        }
+        .header a {
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+        .header-right {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+        .header-right p{
+            margin: 0;
+            font-weight: 30px;
+            text-shadow: -2px -2px 10px rgb(30, 80, 160),
+                        2px -2px 10px rgb(30, 80, 160), 
+                        -2px 2px 0 rgb(30, 80, 160), 
+                        2px 2px 0 rgb(30, 80, 160),
+                        0px 4px 6px rgba(27, 21, 21, 0.3);
+        }
+        hr {
+            border: none; /* Loại bỏ viền mặc định */
+            height: 2px; /* Độ dày của đường kẻ */
+            background: repeating-linear-gradient(90deg,
+                white 0px, white 2px, 
+                transparent 2px, transparent 6px
+            );
+            width: 100%;
+            margin: 10px 0;
+        }
+        .body{
+            padding-left: 7px;
+            display: flex;
+            gap: 30px;
+        }
+        .body_left{
+            width: 50%;
+        }
+        .body_left h2{
+            font-weight: 800;
+            font-size: 30px;
+        }
+        .body_left p{
+            font-weight: 200;
+            font-size: 16px;
+        }
+        .body_right{
+            width: 40%;
+        }
+        .body_form{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-left: 40px;
+        }
+       .body_form_div{
+        display: flex;
+        align-items: center;
+       }
+       .body_form label {
+        width: 150px; 
+        text-align: left; 
+       
+    }
+    .body_form textarea{
+        resize: none;
+        height: 120px;
+    }
+    .body_form input,textarea{
+        width: 250px;
+        border-radius: 6px;
+    }
+    .body_form_div_footer{
+        display: flex;
+        width: 50px;
+        gap: 10px;
+        padding-left: 180px;
+    }
+    img{
+        margin-top: 25px;
+        width: 100%;
+    }
+    h1{
+        color: blue;
+        text-shadow: 2px 4px 2px rgb(27, 13, 225);
+    }
+    .body_right p{
+        color: blue;
+        font-weight: 900;
+        font-size: 18px;
+    }
+    .body_right p,h1{
+        padding-left: 20px;
+    }
+    .footer p{
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#">Services</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="header-right">
+                <p>Sky World</p>
+            </div>
+        </div>
+        <hr>
+        <div class="body">
+            <div class="body_left">
+                <h2>Registration information</h2>
+                <p>
+                    Start your travel planning now with our on-line tour regstration
+                    form. Just tell us a little about yourself and your group and one of our travel
+                    experts will contact  you  to create the perfect custom built for your group's needs .
+                </p>
+                <form class="body_form">
+                   <div class="body_form_div">
+                        <label class="body_form_label">Title: </label>
+                        <select>
+                            <option>Mr</option>
+                            <option>b</option>
+                            <option>c Kingdom</option>
+                            <option>d</option>
+                        </select>
+                   </div>
+                    <div class="body_form_div">
+                        <label >Full Name*: </label>
+                        <input type="text" placeholder="First Name">
+                    </div>
+                    <div class="body_form_div">
+                        <label >Mailing Address: </label>
+                        <input type="text" placeholder="Mailing Address">
+                    </div>
+                    <div class="body_form_div">
+                        <label >City: </label>
+                        <input type="text" placeholder="City">
+                    </div>
+                    <div class="body_form_div">
+                        <label >Country: </label>
+                        <input type="text" placeholder="Country">
+                    </div>
+                    <div class="body_form_div">
+                        <label class="body_form_label">Specific questions or requests about your tour: </label>
+                        <textarea placeholder="Specific questions or requests about your tour"></textarea>
+                    </div>
+                    <div class="body_form_div_footer">
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </div>
+                </form>
+            </div>
+            <div class="body_right">
+                <img src="../Bai1/sky.png">
+                <h1>
+                    Your've arrived.
+                </h1>
+                <p>
+                    Journeys as great as the destinations.
+                </p>
+            </div>
+        </div>
+        <hr>
+        <div class="footer">
+                <p> 
+                    2016 Sky World Tours. All rights reserved.
+                </p>
+                <p>
+                    Contact information: Student Name | StudentID | Testing Date 
+                </p>
+        </div>
+    </div>
+</body>
+</html>

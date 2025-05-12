@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRANG CHỦ - TV Store</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../font_awesome/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/slick.css" />
+    <link rel="stylesheet" href="../css/login.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-xl position-sticky top-0 ">
+        <div class="container d-flex justify-content-between">
+            <a class="navbar-brand" href="../html/home.html">
+                <img src="../img/logoo.png" alt="Logo" height="30" class="d-inline-block align-text-top navbar-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto d-flex gap-5">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../html/home.html"> <i
+                                class="fas fa-home"></i> TRANG CHỦ</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active" href="../html/category.html" id="product-link"><i
+                                class="fas fa-box-open"></i> SẢN PHẨM
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../html/deals.html"><i class="fas fa-tags"></i>
+                            KHUYẾN MÃI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../html/contact.html"> <i class="fas fa-envelope"></i> LIÊN
+                            HỆ</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <form class="d-flex justify-content-between align-items-center ms-auto gap-5 form-icon">
+                        <div class="search-wrapper" id="searchBox">
+                            <input type="text" class="search-input" placeholder="Tìm kiếm..." id="searchInput">
+                            <i class="fas fa-search search-button" id="searchBtn"></i>
+                            <div id="searchResults" style="margin-top: 20px; width: 600px; height: 1000px;"></div>
+                        </div>
+                        <a href="../html/cart.html" class="position-relative">
+                            <i class="fas fa-cart-shopping"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                id="cartCount">0</span>
+                        </a>
+                        <div id="userIconContainer" class="position-relative">
+                            <i class="fas fa-user user-icon " data-bs-toggle="modal" data-bs-target="#loginModal"></i>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero-slider" data-aos="fade-up" data-aos-duration="1000">
+            <div class="slider">
+                <div class="slider-item">
+                    <img src="../img/section_tv1.jpg" alt="">
+                    <div class="container__slider">
+                        <div class="slider-content">
+                            <a href="#" class="btn btn-buy text-white fw-bold fs-5">Xem ngay</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-item">
+                    <div class="container__slider">
+                        <img src="../img/section_tv2.png" alt="">
+                        <div class="slider-content">
+                            <a href="#" class="btn btn-buy text-white fw-bold fs-5">Xem ngay</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-item">
+                    <div class="container__slider">
+                        <img src="../img/section_tv3.jpg" alt="">
+                        <div class="slider-content">
+                            <a href="#" class="btn btn-buy text-white fw-bold fs-5">Xem ngay</a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="slick-dots"  role="tablist">
+                    <li class="" role="presentation"><button type="button" role="tab" id="slick-slide-control00"
+                            aria-controls="slick-slide00" aria-label="1 of 3" tabindex="-1">1</button></li>
+                    <li role="presentation" class="slick-active"><button type="button" role="tab"
+                            id="slick-slide-control01" aria-controls="slick-slide01" aria-label="2 of 3" tabindex="0"
+                            aria-selected="true">2</button></li>
+                    <li role="presentation" class=""><button type="button" role="tab" id="slick-slide-control02"
+                            aria-controls="slick-slide02" aria-label="3 of 3" tabindex="-1">3</button></li>
+                </ul>
+            </div>
+        </section>
+        <section class="introduce py-5 text-white" data-aos="fade-up" data-aos-duration="1000">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">GIỚI THIỆU TV STORE</h2>
+                <div class="mb-4 intro-web position-relative overflow-hidden" data-aos="fade-up"
+                    data-aos-duration="1000">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 d-flex flex-column justify-content-center gap-3">
+                            <img src="../img/intro.png" alt="Cửa hàng TV hiện đại" class="w-100">
+                            <div
+                                class="intro-web-content d-flex flex-column justify-content-center align-items-center p-4">
+                                <h2 class="text-center mb-4">Chào mừng đến với TV Store</h2>
+                                <p class="text-center mb-4">TV Store tự hào là địa chỉ uy tín hàng đầu cung cấp các sản
+                                    phẩm truyền hình từ những thương hiệu nổi tiếng toàn cầu như Samsung, LG, Sony, TCL
+                                    và nhiều hãng khác. Với hơn 10 năm kinh nghiệm trong ngành, chúng tôi cam kết mang
+                                    đến cho khách hàng:</p>
+                                <ul class="mb-4 text-start">
+                                    <li>Sản phẩm chính hãng 100% với giá cả cạnh tranh</li>
+                                    <li>Đa dạng mẫu mã từ TV thông minh, OLED, QLED đến màn hình siêu lớn 8K</li>
+                                    <li>Chế độ bảo hành lên đến 3 năm cùng dịch vụ hậu mãi tận tâm</li>
+                                    <li>Đội ngũ tư vấn viên am hiểu công nghệ</li>
+                                    <li>Giao hàng nhanh chóng, lắp đặt chuyên nghiệp trên toàn quốc</li>
+                                </ul>
+                                <p class="text-center mb-4">Hãy khám phá thế giới giải trí đỉnh cao cùng những thiết bị
+                                    trình chiếu tân tiến nhất!</p>
+                                <a href="../html/intro.html" class="btn btn-primary px-4 py-2">Khám phá ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="introduce py-5 text-white" data-aos="fade-up" data-aos-duration="1000">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">GIỚI THIỆU VỀ CHÚNG TÔI</h2>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-lg-3 mb-4" data-aos="fade-up" data-aos-duration="1000">
+                        <img src="../img/login.png">
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-lg-3 mb-4" data-aos="fade-up" data-aos-duration="1000">
+                        <img src="../img/login.png">
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-6 col-lg-6 d-flex flex-column justify-content-center gap-3"
+                        data-aos="fade-up" data-aos-duration="1000">
+                        <h2 class="text-white">Chào mừng bạn đến với TV Store</h2>
+                        <p class="text-white">Chúng tôi cung cấp các sản phẩm TV chất lượng cao với giá cả cạnh tranh
+                            nhất thị trường. Đội
+                            ngũ nhân viên chuyên nghiệp và tận tâm sẽ giúp bạn tìm được sản phẩm phù hợp nhất.</p>
+                        <a href="../html/about.html" class="btn btn-secondary w-50 text-white m-auto fw-bold">Tìm hiểu
+                            thêm</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="featured-products py-5" data-aos="fade-up" data-aos-duration="1000">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">SẢN PHẨM NỔI BẬT</h2>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="product-card">
+                            <img src="../img/product_samsung.png" alt="Samsung 4K UHD 50 inch" class="img-fluid">
+                            <div class="product-info">
+                                <h3>Samsung 4K 50 inch</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star-half text-warning"></i>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">13.990.000₫</span>
+                                    <span class="old-price">15.000.000₫</span>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="../html/category.html?id=5"> <button
+                                            class="btn btn-sm btn-outline-secondary">Chi tiết</button></a>
+                                    <a href="../html/category.html?id=5"> <button class="btn btn-sm btn-buynow">Mua
+                                            ngay</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="product-card">
+                            <img src="../img/product_LG.png" alt="LG OLED 55 inch" class="img-fluid">
+                            <div class="product-info">
+                                <h3>LG OLED 55 inch</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star-half text-warning"></i>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">25.900.000₫</span>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="../html/category.html?id=15"> <button
+                                            class="btn btn-sm btn-outline-secondary">Chi tiết</button></a>
+                                    <a href="../html/category.html?id=15"> <button class="btn btn-sm btn-buynow">Mua
+                                            ngay</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="product-card">
+                            <img src="../img/product_Sony.png" alt="Sony Bravia 65 inch" class="img-fluid">
+                            <div class="product-info">
+                                <h3>Sony Bravia 65 inch</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">17.890.000₫</span>
+                                    <span class="old-price">18.390.000₫</span>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="../html/category.html?id=12"> <button
+                                            class="btn btn-sm btn-outline-secondary">Chi tiết</button></a>
+                                    <a href="../html/category.html?id=12"> <button class="btn btn-sm btn-buynow">Mua
+                                            ngay</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="product-card">
+                            <img src="../img/product_TCL.png" alt="TCL QLED 43 inch" class="img-fluid">
+                            <div class="product-info">
+                                <h3>TCL QLED 43 inch</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">6.250.000₫</span>
+                                    <span class="old-price">7.600.000₫</span>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="../html/category.html?id=30"> <button
+                                            class="btn btn-sm btn-outline-secondary">Chi tiết</button></a>
+                                    <a href="../html/category.html?id=30"> <button class="btn btn-sm btn-buynow">Mua
+                                            ngay</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4" data-aos="fade-up" data-aos-duration="1000">
+                    <a href="../html/category.html" class="btn btn-secondary">Xem tất cả sản phẩm</a>
+                </div>
+            </div>
+        </section>
+        <section class="promotion-banner py-5 d-flex justify-content-around" data-aos="fade-up"
+            data-aos-duration="1000">
+            <div class="container d-flex">
+                <div class="col-md-6 promotion-deal">
+                    <div class="promotion-content ms-5">
+                        <h2 class="text-white">KHUYẾN MÃI ĐẶC BIỆT</h2>
+                        <p class="text-white">Giảm giá lên đến 30% cho tất cả TV Samsung thế hệ mới</p>
+                        <div class="contact-item">
+                            <i class="fas fa-clock text-white"></i>
+                            <span class="text-white">Áp dụng đến: <span class="highlight">31/12/2023</span></span>
+                        </div>
+                        <div class="countdown-timer">
+                            <div class="countdown-item">
+                                <span id="days" class="text-white"></span>
+                                <span>Ngày</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span id="hours" class="text-white"></span>
+                                <span>Giờ</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span id="minutes" class="text-white"></span>
+                                <span>Phút</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span id="seconds" class="text-white"></span>
+                                <span>Giây</span>
+                            </div>
+                        </div>
+                        <a href="../html/category.html" class="btn btn-secondary text-white mt-3 fs-2 fw-bold" id="">Mua
+                            ngay</a>
+                    </div>
+                </div>
+                <div class="col-md-6 promotion-info d-flex flex-column gap-4 ms-4">
+                    <img src="../img/product_samsung.png" alt="">
+                    <div class=" fs-4 gap-2 d-flex flex-column ">
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle text-white"></i>
+                            <span class="text-white">Miễn phí giao hàng và lắp đặt trong <span
+                                    class="text-danger fw-bold">24h</span></span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle text-white"></i>
+                            <span class="text-white">Tặng kèm gói bảo hành <span class="text-danger fw-bold">2
+                                    năm</span></span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle text-white"></i>
+                            <span class="text-white">Giảm thêm <span class="text-danger fw-bold">5%</span> khi thanh
+                                toán
+                                bằng thẻ
+                                Techcombank</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle text-white"></i>
+                            <span class="text-white">Trả góp <span class="text-danger fw-bold">0%</span> lãi suất</span>
+                        </div>
+                    </div>
+                    <div class="fs-4 d-flex flex-column gap-2">
+                        <div class="contact-item">
+                            <i class="fas fa-phone text-white"></i>
+                            <span class="text-white">Hotline: <span
+                                    class="text-danger fw-bold">0123.456.789</span></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt text-white"></i>
+                            <span class="text-white">Địa chỉ: <span class="text-danger fw-bold">123 Nguyễn Du, Q.1,
+                                    TP.HCM</span></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock text-white"></i>
+                            <span class="text-white">Áp dụng đến: <span
+                                    class="text-danger fw-bold">31/12/2025</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="testimonials py-5" data-aos="fade-up" data-aos-duration="1000">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">ĐÁNH GIÁ CỦA KHÁCH HÀNG</h2>
+                <div class="testimonial-slider">
+                    <div class="testimonial-item" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="testimonial-content">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p>"Tôi rất hài lòng với TV Samsung mua tại cửa hàng. Hình ảnh sắc nét, âm thanh sống động.
+                                Dịch vụ tư vấn rất chuyên nghiệp."</p>
+                            <div class="testimonial-author d-flex gap-2">
+                                <img src="https://demo.voidcoders.com/htmldemo/potoliaV2/main-files/assets/img/team/team-4.jpg"
+                                    alt="Khách hàng" class="img__rating">
+                                <div>
+                                    <h5>Nguyễn Văn A</h5>
+                                    <small>Hà Nội</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="testimonial-content">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star-half text-warning"></i>
+                            </div>
+                            <p>"TV Sony Bravia mua ở đây chất lượng tuyệt vời. Nhân viên tư vấn nhiệt tình, giao hàng
+                                nhanh chóng. Sẽ quay lại ủng hộ."</p>
+                            <div class="testimonial-author d-flex gap-2">
+                                <img src="https://demo.voidcoders.com/htmldemo/potoliaV2/main-files/assets/img/team/team-1.jpg"
+                                    alt="Khách hàng" class="img__rating">
+                                <div>
+                                    <h5>Trần Thị B</h5>
+                                    <small>TP.HCM</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="testimonial-content">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p>"Đã mua nhiều TV tại đây cho gia đình và công ty. Luôn hài lòng về chất lượng sản phẩm và
+                                dịch vụ hậu mãi."</p>
+                            <div class="testimonial-author d-flex gap-2">
+                                <img src="https://demo.voidcoders.com/htmldemo/potoliaV2/main-files/assets/img/team/team-5.jpg"
+                                    alt="Khách hàng" class="img__rating">
+                                <div>
+                                    <h5>Lê Văn C</h5>
+                                    <small>Đà Nẵng</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4" data-aos="fade-up" data-aos-duration="1000">
+                    <a href="../html/category.html" class="btn btn-secondary">Xem thêm</a>
+                </div>
+            </div>
+        </section>
+        <section class="brands py-5" data-aos="fade-up" data-aos-duration="1000">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">THƯƠNG HIỆU ĐỐI TÁC</h2>
+                <div class="brand-slider d-flex flex-column gap-4">
+                    <div class="brand-item">
+                        <img src="../img/Samsung_Logo.png" alt="Samsung">
+                    </div>
+                    <div class="brand-item">
+                        <img src="../img/LG_logo.png" alt="LG">
+                    </div>
+                    <div class="brand-item">
+                        <img src="../img/logo-sony.png" alt="Sony">
+                    </div>
+                    <div class="brand-item">
+                        <img src="../img/logo-tcl.png" alt="TCL">
+                    </div>
+                    <div class="brand-item">
+                        <img src="../img/logo-panasonic.png" alt="Panasonic">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="news-section py-5" data-aos="fade-up" data-aos-duration="1000">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">TIN TỨC & CÔNG NGHỆ</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="news-card d-flex flex-column justify-content-between">
+                            <i class="fas fa-newspaper fs-2 p-3"></i>
+                            <div class="news-content d-flex flex-column justify-content-between">
+                                <div class="news-date">15/06/2024</div>
+                                <h3>Cách chọn TV phù hợp với phòng khách</h3>
+                                <p>Hướng dẫn chọn kích thước và công nghệ TV phù hợp với không gian phòng khách của bạn.
+                                </p>
+                            </div>
+                            <a href="#" class="ps-3 text-dark text-decoration-underline fs-4 fw-medium">Đọc tiếp</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="news-card d-flex flex-column justify-content-between">
+                            <i class="fas fa-newspaper fs-2 p-3"></i>
+                            <div class="news-content d-flex flex-column justify-content-between">
+                                <div class="news-date">10/06/2024</div>
+                                <h3>So sánh công nghệ OLED và QLED</h3>
+                                <p>Phân tích ưu nhược điểm của hai công nghệ màn hình hàng đầu hiện nay.</p>
+                            </div>
+                            <a href="#" class="ps-3 text-dark text-decoration-underline fs-4 fw-medium">Đọc tiếp</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="news-card d-flex flex-column justify-content-between">
+                            <i class="fas fa-newspaper fs-2 p-3"></i>
+                            <div class="news-content d-flex flex-column justify-content-between">
+                                <div class="news-date">05/06/2024</div>
+                                <h3>Xu hướng TV thông minh năm 2024</h3>
+                                <p>Các xu hướng công nghệ TV thông minh được dự đoán sẽ thống trị thị trường năm 2024.
+                                </p>
+                            </div>
+                            <a href="#" class="ps-3 text-dark text-decoration-underline fs-4 fw-medium">Đọc tiếp</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4 ">
+                    <a href="#" class="btn btn-secondary ">Xem tất cả tin tức</a>
+                </div>
+            </div>
+        </section>
+        <section class="newsletter py-5" data-aos="fade-up" data-aos-duration="1000">
+            <div class="container">
+                <div class="newsletter-card">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-white">
+                            <h2>ĐĂNG KÝ NHẬN BẢN TIN</h2>
+                            <p>Nhận thông tin khuyến mãi và tin tức công nghệ mới nhất</p>
+                        </div>
+                        <div class="col-md-6">
+                            <form class="newsletter-form">
+                                <div class="input-group">
+                                    <input type="email" class="form-control" placeholder="Nhập email của bạn">
+                                    <button class="btn btn-secondary" type="submit">Đăng ký</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer py-5" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container text-white">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <img src="../img/logoo.png" alt="Logo" height="40" class="mb-3">
+                    <p>Chuyên cung cấp các sản phẩm TV chất lượng cao với giá cả cạnh tranh nhất thị trường.</p>
+                    <div class="social-icons">
+                        <a href="#"> <i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"> <i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"> <i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"> <i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>LIÊN KẾT NHANH</h5>
+                    <ul class="footer-links">
+                        <li><a href="../html/home.html">Trang chủ</a></li>
+                        <li><a href="../html/category.html">Sản phẩm</a></li>
+                        <li><a href="../html/deals.html">Khuyến mãi</a></li>
+                        <li><a href="../html/contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>CHÍNH SÁCH</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Chính sách giao hàng</a></li>
+                        <li><a href="#">Chính sách thanh toán</a></li>
+                        <li><a href="#">Bảo mật thông tin</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>LIÊN HỆ</h5>
+                    <ul class="footer-contact">
+                        <div class="d-flex gap-2">
+                            <i class="fas fa-location-dot"></i>
+                            <li>123 Đường ABC, Quận 1, TP.HCM</li>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <i class="fas fa-phone"></i>
+                            <li> 0901 234 567</li>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <i class="fas fa-mail-bulk"></i>
+                            <li>info@tvstore.com</li>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <i class="fas fa-clock"></i>
+                            <li> 8:00 - 20:00 (T2 - CN)</li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2024 TV Store. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- MODAL ĐĂNG NHẬP -->
+    <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4 neumorphic" style="border-radius: 20px;">
+                <div class="modal-header border-0">
+                    <h1 class="modal-title fs-4" id="loginModalLabel">Đăng nhập</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                </div>
+                <div class="modal-body d-flex justify-content-center flex-column">
+                    <input type="text" id="loginUsername" class="neumorphic neumorphic-input form-control mb-3"
+                        placeholder="Tên đăng nhập">
+                    <input type="password" id="loginPassword" class="neumorphic neumorphic-input form-control mb-3"
+                        placeholder="Mật khẩu">
+                    <button id="loginBtn" class="neumorphic neumorphic-button mb-2 w-100">Đăng nhập</button>
+                    <div class="d-flex justify-content-between mt-3">
+                        <a href="#" class="register">Quên mật khẩu?</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal"
+                            class="register">Đăng ký</a>
+                    </div>
+                    <p class="text-center text-opacity-100">Hoặc đăng nhập với:</p>
+                    <div class="d-flex justify-content-center gap-3 icon-login">
+                        <i class="fa-brands fa-facebook facebook"></i>
+                        <i class="fa-brands fa-google google"></i>
+                        <i class="fa-brands fa-instagram instagram"></i>
+                        <i class="fa-brands fa-tiktok tiktok"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL ĐĂNG KÝ -->
+    <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4 neumorphic" style="border-radius: 20px;">
+                <div class="modal-header border-0">
+                    <h1 class="modal-title fs-4" id="registerModalLabel">Đăng ký</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                </div>
+                <div class="modal-body d-flex justify-content-center flex-column">
+                    <input type="text" id="regUsername" class="neumorphic neumorphic-input form-control mb-3"
+                        placeholder="Tên đăng nhập">
+                    <input type="password" id="regPassword" class="neumorphic neumorphic-input form-control mb-3"
+                        placeholder="Mật khẩu">
+                    <input type="password" id="confirmPassword" class="neumorphic neumorphic-input form-control mb-3"
+                        placeholder="Nhập lại mật khẩu">
+                    <input type="email" id="regEmail" class="neumorphic neumorphic-input form-control mb-3"
+                        placeholder="Email">
+                    <button id="registerBtn" class="neumorphic neumorphic-button mb-2 w-100">Đăng ký</button>
+                    <p class="text-center">
+                        Đã có tài khoản?
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal"
+                            class="register">Đăng nhập</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal xác nhận đăng xuất -->
+    <div class="modal fade" id="confirmLogoutModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Xác nhận đăng xuất</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                </div>
+                <div class="modal-body">
+                    Bạn có chắc chắn muốn đăng xuất không?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-warning" id="confirmLogoutBtn">Đăng xuất</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="https://static.thenounproject.com/png/878621-200.png" alt="" class="back-to-top">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/slick.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="../js/product-detail.js"></script>
+    <script src="../js/category.js"></script>
+
+</body>
+
+</html>

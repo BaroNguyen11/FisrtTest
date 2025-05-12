@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../test/css/bootstrap.min.css">
+    <style>
+        li {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .container {
+            border: 1px solid #333;
+            padding: 0;
+        }
+        
+        footer {
+            background-color: rgb(50, 147, 238);
+        }
+        
+        p {
+            padding-bottom: 10px;
+            margin: 0;
+        }
+        
+        label {
+            width: 180px;
+            display: flex;
+            justify-content: end;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="../test/img/banner1.png" class="w-100" style="height: 200px; object-fit: cover;">
+        <div class="d-flex gap-2 ">
+            <h4 class="text-primary pt-2">Free Englist Course</h4>
+            <ul class="d-flex gap-3 p-2 justify-content-center align-items-center">
+                <li>
+                    <a href="">Trang chủ</a>
+                </li>
+                <li>
+                    <a href="">Giới thiệu</a>
+                </li>
+                <li>
+                    <a href="">Khóa học</a>
+                </li>
+                <li>
+                    <a href="" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Đăng ký</a>
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <div>
+            <h1>DANH SÁCH ĐĂNG KÝ KHÓA HỌC</h1>
+            <table class="table-bordered w-100" id="tblinfo">
+                <thead>
+                    <tr>
+                        <th scope="col">Số tt</th>
+                        <th scope="col">Họ tên</th>
+                        <th scope="col">Ngày sinh</th>
+                        <th scope="col">Điện thoại</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Khóa học</th>
+                        <th scope="col">Hình thức học</th>
+                        <th scope="col">Kỹ năng cần luyện</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        <footer class="d-flex flex-column text-center mt-4">
+            <h3 class="text-white">Thông tin sinh viên</h3>
+            <p class="text-white">Họ tên: <b>Nguyễn Văn Bảo</b></p>
+            <p class="text-white">Mã sinh viên: <b>23647241</b></p>
+            <p class="text-white">Mã lớp: <b>DHKTPM19A</b></p>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">THÔNG TIN ĐĂNG KÝ</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <hr>
+                <div class="modal-body">
+
+                    <div class="d-flex gap-4 mb-3">
+                        <label for="txtten">Họ tên</label>
+                        <div class="flex-grow-1">
+                            <input type="text" name="txtten" id="txtten" class="form-control" required="" onblur="kiemtraten()">
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-4 mb-3">
+                        <label for="txtns">Ngày sinh</label>
+                        <div class="flex-grow-1">
+                            <input type="date" name="txtns" id="txtns" class="form-control" required="" onblur="kiemtrans()">
+                        </div>
+                    </div>
+                    <div class="d-flex gap-4 mb-3">
+                        <label for="txtsdt">Số điện thoại</label>
+                        <div class="flex-grow-1">
+                            <input type="text" name="txtsdt" id="txtsdt" class="form-control" required="" onblur="kiemtrasdt()">
+                        </div>
+                    </div>
+                    <div class="d-flex gap-4 mb-3">
+                        <label for="txtemail">Email</label>
+                        <div class="flex-grow-1">
+                            <input type="email" name="txtemail" id="txtemail" class="form-control" required="" onblur="kiemtraemail()">
+                        </div>
+                    </div>
+                    <div class="d-flex gap-4 mb-3">
+                        <label for="khoahoc" class="pt-2">Chọn khóa học:</label>
+                        <div class="flex-grow-1">
+                            <select class="form-select" id="khoahoc" required="" onchange="kiemtrakhoahoc()">
+                                <option value="">-- Chọn khóa học -- </option>
+                                <option value="3">Anh văn cơ bản </option>
+                                <option value="6">Anh văn giao tiếp</option>
+                                <option value="12">Luyện thi IELTS</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-4 mb-3">
+                        <label for="txthp" class="pt-2">Thời gian học:</label>
+                        <div class="flex-grow-1">
+                            <input type="text" name="txttime" id="txttime" class="form-control" required="" readonly="">
+                        </div>
+                    </div>
+                    <div class="d-flex gap-4 mb-3">
+                        <label for="txtemail">Chọn hình thức học</label>
+                        <div class="d-flex flex-column">
+                            <div class="d-flex gap-2">
+                                <input type="radio" name="hinhthuc" value="trungtam"> Học tại trung tâm
+                            </div>
+                            <div class="d-flex gap-2">
+                                <input type="radio" name="hinhthuc" value="online"> Học online
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-4 mb-3">
+                        <label for="txtemail">Các kỹ năng luyện tập</label>
+                        <div class="d-flex flex-column">
+                            <div class="d-flex gap-2">
+                                <input type="checkbox" id="chknghe"> Kỹ năng nghe
+                            </div>
+                            <div class="d-flex gap-2">
+                                <input type="checkbox" id="chkdoc"> Kỹ năng đọc
+                            </div>
+                            <div class="d-flex gap-2">
+                                <input type="checkbox" id="chkviet"> Kỹ năng viết
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="Singin()">Đăng ký</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Hủy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- script -->
+    <script src="../test/js/bootstrap.bundle.min.js"></script>
+    <script src="../test/js/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            const hocPhiTheoKhoa = {
+                '3': '3 tháng',
+                '6': '6 tháng',
+                '12': '12 tháng'
+            };
+
+            $('#khoahoc').change(function() {
+                const khoa = $(this).val();
+                if (hocPhiTheoKhoa[khoa]) {
+                    $('#txttime').val(hocPhiTheoKhoa[khoa]);
+
+                } else {
+                    $('#txttime').val('');
+
+                }
+            });
+        });
+
+        function kiemtraten() {
+            let ten = $('#txtten').val().trim();
+            let regex = /^([A-Za-z]+)(\s[A-Za-z]+)+$/;
+            if (ten === '' || !regex.test(ten)) {
+                return false;
+            }
+            return true;
+        }
+
+        function kiemtrasdt() {
+            let sdt = $('#txtsdt').val().trim();
+            let regex = /^0(3|8|9)\d{8}$/;
+            if (!regex.test(sdt)) {
+                return false;
+            }
+            return true;
+        }
+
+        function kiemtrans() {
+            let ns = new Date($('#txtns').val().trim());
+            let today = new Date();
+            let age = today.getFullYear() - ns.getFullYear();
+            if (today.getMonth() < ns.getMonth() ||
+                (today.getMonth() === ns.getMonth() && today.getDate() < ns.getDate())) {
+                age--;
+            }
+
+            if (age < 0) {
+                return false;
+            }
+
+            return true;
+        }
+
+        function kiemtrakhoahoc() {
+            if ($('#khoahoc').val().trim() === '') {
+
+                return false;
+            }
+
+            return true;
+        }
+
+        function kiemtraemail() {
+            let regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.com$/;
+            if ($('#txtemail').val().trim() === '') {
+
+                return false;
+            }
+
+            return true;
+        }
+
+        let count = 1;
+
+        function Singin() {
+             if (!kiemtraten() || !kiemtrasdt() || !kiemtrans() || !kiemtrakhoahoc() || !kiemtraemail()) {
+                 alert("Phải nhập thông tin đúng và đầy đủ!");
+                 return false;
+             }
+
+            let ten = $('#txtten').val();
+            let ns = $('#txtns').val();
+            let sdt = $('#txtsdt').val();
+            let mail = $('#txtemail').val();
+            let khoahoc = $('#khoahoc').val() +" Tháng";
+            let thoigian = $('#txttime').val();
+            let hinhthuc = $('input[name="hinhthuc"]:checked').val();
+            let kynang = [];
+            if ($('#chknghe').is(':checked')) kynang.push('Kỹ năng nghe');
+            if ($('#chkdoc').is(':checked')) kynang.push('Kỹ năng đọc');
+            if ($('#chkviet').is(':checked')) kynang.push('Kỹ năng viết');
+            kynang = kynang.join(', ');
+            let row = `
+            <tr>
+                 <td>${count++}</td>
+                 <td>${ten}</td>
+                 <td>${ns}</td>
+                 <td>${sdt}</td>
+                 <td>${mail}</td>
+                 <td>${khoahoc}</td>
+                 <td>${hinhthuc}</td>
+                 <td>${kynang}</td>
+            </tr>
+            `;
+            $('#tblinfo tbody').append(row);
+            return true;
+        }
+    </script>
+</body>
+
+</html>

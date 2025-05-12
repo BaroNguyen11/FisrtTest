@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .container {
+            width: 900px;
+            background-color: #fabf01;
+            margin: 0 auto;
+          
+        }
+
+        .header {
+            background-image: url(../De1/banner.jpg);
+            background-size: cover;
+            width: 900px;
+            padding-bottom: 10px;
+
+        }
+
+        .header__nav {
+            height: 40px;
+            display: flex;
+            gap: 200px;
+            line-height: 40px;
+        }
+
+        .nav__menu {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav__menu li {
+            list-style: none;
+            font-weight: 600;
+        }
+
+        .nav__menu li:hover {
+            color: #fabf01;
+            cursor: pointer;
+        }
+
+        .nav__menu ion-icon:hover {
+            color: #fabf01;
+            cursor: pointer;
+        }
+
+        .header__left {
+            width: 40%;
+        }
+
+        .header__right {
+            width: 60%;
+        }
+
+        .header__content {
+            display: flex;
+        }
+
+        .header__button {
+            height: 50px;
+            width: 160px;
+            color: white;
+            font-weight: 600;
+            font-size: 13px;
+            border-radius: 30px;
+            background-color: #363636;
+            cursor: pointer;
+
+
+        }
+        .header__button:hover{
+            background-color: bisque;
+            color: #363636;
+            border: none;
+        }
+        .header__left__button {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            justify-content: flex-start;
+            padding-top: 40px;
+        }
+
+        .header__right__img {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header__right__img img {
+            height: 250px;
+            width: 250px;
+            box-shadow: 10px 10px 20px #333;
+        }
+
+        .body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            padding-top: 10px;
+            padding-bottom: 2px;
+        }
+
+        .input {
+            display: flex;
+            flex-direction: row;
+            gap: 25px;
+        }
+
+        .body__input {
+            width: 400px;
+            height: 40px;
+            border-radius: 30px;
+            border: 1px solid #ffffff;
+
+        }
+
+        input::placeholder {
+            color: rgb(215, 206, 206);
+            font-size: 18px;
+            opacity: 1;
+            padding: 10px;
+        }
+
+        .body__input__footer {
+            width: 825px;
+            height: 60px;
+            border-radius: 30px;
+            border: 1px solid #ffffff;
+        }
+
+        .footer {
+            position: relative;
+            height: 120px;
+            background-color: #363636;
+            padding: 20px 0 0 0 ;
+        }
+
+        .footer__list {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .footer__item {
+            color: white;
+            font-size: 26px;
+            font-weight: 700;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .footer__item-child{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .footer__buton1{
+            position: absolute;
+            top: 27px;
+            left: 28px;
+            width: 12px;
+            height: 12px;
+            border-radius: 30px;
+            background-color: #fabf01;
+            border: none;
+        }
+        .footer__buton2{
+            position: absolute;
+            top: 27px;
+            left: 210px;
+            width: 12px;
+            height: 12px;
+            border-radius: 30px;
+            background-color: #fabf01;
+            border: none;
+        }
+        .footer__buton3{
+            position: absolute;
+            top: 27px;
+            right: 145px;
+            width: 12px;
+            height: 12px;
+            border-radius: 30px;
+            background-color: #fabf01;
+            border: none;
+        }
+        .footer__buton4{
+            position: absolute;
+            top: 27px;
+            right: 410px;
+            width: 12px;
+            height: 12px;
+            border-radius: 30px;
+            background-color: #fabf01;
+            border: none;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <nav class="header__nav">
+                <h3 style="font-size: 35px; padding-left: 20px;">Bliss</h3>
+                <ul class="nav__menu">
+                    <li>HOME</li>
+                    <li>ABOUT</li>
+                    <li>SERVICE</li>
+                    <li>BLOG</li>
+                    <li>CONTACT US</li>
+                    <ion-icon name="person"></ion-icon>
+                    <ion-icon name="search"></ion-icon>
+                </ul>
+
+            </nav>
+            <br>
+            <div class="header__content">
+                <div class="header__left" style="padding-left: 20px;">
+                    <h1 style="font-size: 80px; font-weight: 900;">Spa <br> Center</h1>
+                    <p style="font-size: 19px; padding-top: 10px;">commodo consequat. Duis aute irure dolor in
+                        reprehenderit
+                        in voluptate velit esse cilum dolore eu fugiat nulla pariatur. Exceptour sint</p>
+                    <div class="header__left__button">
+                        <button class="header__button">
+                            CONTACT US
+                        </button>
+                        <button class="header__button">
+                            READ MORE
+                        </button>
+                    </div>
+                </div>
+                <div class="header__right">
+                    <div class="header__right__img">
+                        <img src="../De1/img1.png" alt="">
+                        <img src="../De1/service2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body">
+            <h2 style="font-size: 50px;">Make Appointment</h2>
+            <p style="font-size: 18px; ">Duis aute irure dolor in reprehenderit in volupatate velit esse cillum dolore
+                eu</p>
+            <div class="input">
+                <input type="text" placeholder="Your name" class="body__input">
+                <input type="email" placeholder="Email" class="body__input">
+            </div>
+            <div class="input">
+                <input type="text" placeholder="Phone number" class="body__input">
+                <input type="email" placeholder="Select Message" class="body__input">
+            </div>
+            <div class="input">
+                <input type="text" placeholder="Your name" class="body__input">
+                <input type="email" placeholder="Email" class="body__input">
+            </div>
+            <input type="text" placeholder="Message" class="body__input__footer">
+            <button class="header__button">
+                SEND NOW
+            </button>
+        </div>
+        <div class="footer">
+            <button class="footer__buton1"></button>
+            <button class="footer__buton2"></button>
+            <button class="footer__buton3"></button>
+            <button class="footer__buton4"></button>
+            <ul class="footer__list">
+                <li class="footer__item">
+                    About
+                    
+                    <ul class="footer__item-child">
+                        <li style="font-size: 15px; list-style: none; font-weight: normal;">Student name:</li>
+                        <li style="font-size: 15px; list-style: none; font-weight: normal;">Student ID:</li>
+                    </ul>
+                </li>
+                <li class="footer__item">
+                    Midterm Exam
+                    <ul class="footer__item-child">
+                        <li style="font-size: 15px; list-style: none; font-weight: normal;">System and web technology</li>
+                        <li style="font-size: 15px; list-style: none; font-weight: normal;">Date: 24/3/2025</li>
+                    </ul>
+
+                </li>
+                <li class="footer__item">
+                    Class
+                    <ul class="footer__item-child">
+                        <li style="font-size: 15px; list-style: none; font-weight: normal;">Class name: DHKTPM19A:</li>
+                        <li style="font-size: 15px; list-style: none; font-weight: normal;">Class ID: 403000129983</li>
+                    </ul>
+
+                </li>
+                <li class="footer__item">
+                    Contact
+                    <ul class="footer__item-child">
+                        <li style="font-size: 15px; list-style: none; font-weight: normal;">Email:</li>
+                        <li style="font-size: 15px; list-style: none; font-weight: normal;">Phone:</li>
+                    </ul>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

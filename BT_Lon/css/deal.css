@@ -1,0 +1,73 @@
+.deal-select {
+  height: 60px;
+  width: 100%;
+  box-shadow: 5px 5px 2250px #abaaaa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+  background-color: #fafafa;
+}
+
+.deal-select:hover {
+  transform: translateY(-5px);
+}
+
+.deal-list {
+  margin: 3px;
+}
+
+/* search */
+.search-wrapper {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  transition: width 0.4s ease;
+}
+
+.search-wrapper.active {
+  width: 300px;
+}
+
+.search-input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 0 10px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.search-wrapper.active .search-input {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.search-button {
+  position: absolute;
+  top: 14px;
+  right: 5px;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.3s ease;
+
+}
+
+.search-button:hover {
+  transform: scale(1.1);
+}
+.text-secondary{
+  text-shadow:
+  -2px -2px 5px #000,  
+   2px -2px 5px #000,
+  -2px  2px 5px #000,
+   2px  2px 5px #000;
+  color: #bdd4ea !important;
+}

@@ -1,0 +1,28 @@
+*{
+    margin: 0 auto;
+    font-family: 'Times New Roman', Times, serif;
+}
+.container{
+    width: 600px;
+    border: 2px solid blue;
+    padding: 5px;
+}
+input[type="text"], select{
+    width: 220px;
+    height: 19px;
+    font-size: 15px;
+}
+.row label{
+    width: 200px;
+    margin-right: 10px;
+}
+.table-ls , .table-ls td,.table-ls th{
+    border: 1px solid;
+}
+td{
+    height: 25px;
+}
+button{
+    margin: 10px 0;
+    font-size: 16px;
+}

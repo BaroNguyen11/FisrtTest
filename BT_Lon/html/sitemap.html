@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap Premium</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            text-decoration: none;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #80deea 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px;
+            overflow-x: hidden;
+        }
+
+        .sitemap-container {
+            width: 90%;
+            max-width: 1400px;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .header p {
+            color: #495057;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .nav-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 30px 20px;
+            box-shadow: var(--shadow);
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transform-style: preserve-3d;
+        }
+
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: -1;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-10px) rotateX(5deg) scale(1.03);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
+        .nav-card:hover::before {
+            opacity: 1;
+        }
+
+        .nav-card:hover .icon-wrapper {
+            transform: translateY(-10px) scale(1.1);
+            color: white;
+        }
+
+        .nav-card:hover h3 {
+            color: white;
+        }
+
+        .icon-wrapper {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.8rem;
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        }
+
+        .nav-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+            transition: color 0.3s ease;
+        }
+
+        .nav-card p {
+            color: #6c757d;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-card:hover p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Floating animation */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .nav-card:nth-child(1) {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .nav-card:nth-child(2) {
+            animation: float 4s ease-in-out infinite 0.5s;
+        }
+
+        .nav-card:nth-child(3) {
+            animation: float 4s ease-in-out infinite 1s;
+        }
+
+        .nav-card:nth-child(4) {
+            animation: float 4s ease-in-out infinite 1.5s;
+        }
+
+        .nav-card:nth-child(5) {
+            animation: float 4s ease-in-out infinite 2s;
+        }
+
+        .nav-card:nth-child(6) {
+            animation: float 4s ease-in-out infinite 2.5s;
+        }
+
+        .nav-card:nth-child(7) {
+            animation: float 4s ease-in-out infinite 3s;
+        }
+
+    </style>
+   <link rel="stylesheet" href="../font_awesome/css/all.min.css">
+</head>
+
+<body>
+    <div class="sitemap-container">
+        <div class="header">
+            <h1>Khám Phá Website</h1>
+        </div>
+
+        <div class="sitemap-grid">
+            <a href="../html/home.html" class="nav-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h3>Trang Chủ</h3>
+            </a>
+
+            <a href="../html/category.html" class="nav-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-boxes"></i>
+                </div>
+                <h3>Sản Phẩm</h3>
+            </a>
+
+            <a href="../html/deals.html" class="nav-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-percentage"></i>
+                </div>
+                <h3>Khuyến Mại</h3>
+            </a>
+
+            <a href="../html/contact.html" class="nav-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-envelope-open-text"></i>
+                </div>
+                <h3>Liên Hệ</h3>
+            </a>
+
+            <a href="../html/cart.html" class="nav-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-shopping-basket"></i>
+                </div>
+                <h3>Giỏ Hàng</h3>
+            </a>
+
+            <a href="../html/me.html" class="nav-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3>Hồ Sơ</h3>
+            </a>
+
+            <a href="../html/about.html" class="nav-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Thông Tin SV</h3>
+            </a>
+            <a href="../html/intro.html" class="nav-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-"></i>
+                </div>
+                <h3>Giới Thiệu Trang Web</h3>
+            </a>
+            <a href="../html/intro.html" class="nav-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-"></i>
+                </div>
+                <h3>Giới Thiệu Trang Web</h3>
+            </a>
+           
+        </div>
+    </div>
+</body>
+
+</html>

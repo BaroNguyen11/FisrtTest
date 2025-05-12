@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skibidi</title>
+    <link rel="stylesheet" href="../Code/bootstrap/asset/bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container py-3">
+        <img src="../Code/De1/img1.png" alt="">
+        <ul>
+            <li><a href="">Trang chu</a></li>
+            <li><a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Dang ky</a></li>
+        </ul>
+        <table class="table " id="tblinfo">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">ho ten</th>
+                    <th scope="col">sdt</th>
+                    <th scope="col">ngay sinh</th>
+                    <th scope="col">Gioi tinh</th>
+                    <th scope="col">dia chi</th>
+                    <th scope="col">khoa hoc</th>
+                    <th scope="col">hoc phi</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+            </tbody>
+        </table>
+
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="ms-3 d-flex">
+                        <label for="">Ho ten: </label>
+                        <input type="text" class="form-control" placeholder="Ho ten" id="txthoten"
+                            onblur="checkHoten()">
+                        <span class=" text-danger" id="errhoten">*</span>
+                    </div>
+
+                    <div class="ms-3 d-flex">
+                        <label for="">sdt: </label>
+                        <input type="text" class="form-control" placeholder="sdt" id="txtsdt" onblur="checkSdt()">
+                        <span class="text-danger" id="errsdt">*</span>
+                    </div>
+
+                    <div class="ms-3 d-flex">
+                        <label for="">ngay sinh: </label>
+                        <input type="date" class="form-control" id="txtns" onblur="checkNgaysinh()">
+                        <span class=" text-danger" id="errns">*</span>
+                    </div>
+
+                    <div class="ms-3 d-flex">
+                        <label for="">Gioi tinh: </label>
+                        <input type="radio" name="gioitinh" value="Nam"> Nam
+                        <input type="radio" name="gioitinh" value="Nu"> Nu
+                    </div>
+
+                    <div class="ms-3 d-flex">
+                        <label for="">Dia chi: </label>
+                        <input type="text" class="form-control" placeholder="dia chi" id="txtdiachi">
+                        <span class=" text-danger" id="errdc">*</span>
+                    </div>
+
+                    <div class="ms-3 d-flex">
+                        <label for="">Khoa hoc: </label>
+                        <select name="" id="txtkhoahoc">
+                            <option value="">Chon khoa hoc</option>
+                            <option value="2">Khoa hoc 2 thang</option>
+                            <option value="4">Khoa hoc 4 thang</option>
+                            <option value="6">Khoa hoc 6 thang</option>
+                        </select>
+                        <span class=" text-danger" id="errkhoahoc">*</span>
+                    </div>
+
+                    <div class="ms-3 d-flex">
+                        <label for="">Hoc phi: </label>
+                        <input type="text" class="form-control" placeholder="hoc phi" id="txthp" onblur="checkHocphi()">
+                        <span class=" text-danger" id="errhp">*</span>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                        onclick="Singin()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- script -->
+    <script src="../BT_Lon/jquery/jquery.min.js"></script>
+    <script src="../Code/bootstrap/asset/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let count = 1;
+        const hocPhiTheoKhoa = {
+            '2': '500000',
+            '4': '800000',
+            '6': '1000000',
+        }
+        $('#txtkhoahoc').change(function () {
+            const khoahoc = $(this).val();
+            if (hocPhiTheoKhoa[khoahoc]) {
+                $('#txthp').val(hocPhiTheoKhoa[khoahoc]);
+                $('#errkhoahoc').text('');
+            } else {
+                $('#txthp').val('');
+                $('#errkhoahoc').text('Khoa hoc khong hop le!');
+            }
+        });
+        function checkHoten() {
+            let hoten = $('#txthoten').val().trim();
+            let regex = /^([A-Za-z]+)( [A-Za-z]+)+$/;
+            if (hoten === '' || !regex.test(hoten)) {
+                $('#errhoten').text('Ho ten khong hop le!');
+                return false;
+            }
+            $('#errhoten').text('');
+            return true;
+        }
+        function checkSdt() {
+            let sdt = $('#txtsdt').val();
+            let regex = /^(0[3|5|7|8|9])+([0-9]{8})$/;
+            if (sdt === '' || !regex.test(sdt)) {
+                $('#errsdt').text('SDT khong hop le!');
+                return false;
+            }
+            $('#errsdt').text('');
+            return true;
+        }
+        function checkNgaysinh() {
+            let ns = new Date($('#txtns').val());
+            let today = new Date();
+            let age = today.getFullYear() - ns.getFullYear();
+            if (ns.getMonth() > today.getMonth() || (ns.getMonth() === today.getMonth() && ns.getDate() > today.getDate())) {
+                age--;
+            }
+            if (age > 18 || age < 10) {
+                $('#errns').text('Tuoi phai 10-18');
+                return false;
+            }
+            $('#errns').text('');
+            return true;
+        }
+        function checkKhoahoc() {
+            if ($('#txtkhoahoc').val() === '') {
+                $('#errkhoahoc').text('Khoa hoc khong hop le!');
+                return false;
+            }
+            $('#errkhoahoc').text('');
+            return true;
+        }
+        function Singin() {
+            if (!checkHoten() || !checkSdt() || !checkNgaysinh() || !checkKhoahoc()) {
+                alert('Vui long kiem tra lai thong tin!');
+                return;
+            }
+            let hoten = $('#txthoten').val();
+            let sdt = $('#txtsdt').val();
+            let ns = $('#txtns').val();
+            let gt = $('input[name="gioitinh"]:checked').val();
+            let dc = $('#txtdiachi').val();
+            let khoahoc = $('#txtkhoahoc').val();
+            let hp = $('#txthp').val();
+            let row = `
+                   <tr>
+                     <td>${count++}</td>
+                    <td>${hoten}</td>
+                    <td>${sdt}</td>
+                    <td>${ns}</td>
+                    <td>${gt}</td>
+                    <td>${dc}</td>
+                    <td>${khoahoc}</td>
+                    <td>${hp}</td>
+                   </tr>
+            `;
+            $('#tblinfo tbody').append(row);
+        }
+    </script>
+</body>
+
+</html>

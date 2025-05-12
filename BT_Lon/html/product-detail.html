@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="../css/product-detail.css">
+    <!-- Thêm các thư viện cần thiết -->
+</head>
+<body>
+    <button onclick="window.history.back()" class="back-button">← Quay lại</button>
+    <div class="product-detail-container" id="product-detail">
+
+
+        <div class="detail-image">
+            <img id="detail-img" src="" alt="">
+        </div>
+        
+        <div class="detail-info">
+            <h1 id="detail-name"></h1>
+            <div class="price-section">
+                <span id="detail-price" class="current-price"></span>
+                <span id="detail-old-price" class="old-price"></span>
+                <span id="detail-discount" class="discount-badge"></span>
+            </div>
+            
+            <div class="rating-section">
+                <span id="detail-rating"></span>
+                <span id="detail-sold"></span>
+            </div>
+            
+            <div class="specs">
+                <p><strong>Hãng:</strong> <span id="detail-brand"></span></p>
+                <p><strong>Kích thước:</strong> <span id="detail-size"></span></p>
+                <p><strong>Độ phân giải:</strong> <span id="detail-resolution"></span></p>
+                <p><strong>Loại màn hình:</strong> <span id="detail-screen-type"></span></p>
+                <p><strong>Hệ điều hành:</strong> <span id="detail-os"></span></p>
+                <p><strong>Kết nối:</strong> <span id="detail-connectivity"></span></p>
+            </div>
+            
+            <div class="features">
+                <h3>Đặc điểm nổi bật:</h3>
+                <ul id="detail-features"></ul>
+            </div>
+            
+            <button class="buy-button">Mua ngay</button>
+        </div>
+    </div>
+
+    <script src="../js/product-detail.js"></script>
+    <script src="../js/products.js"></script>
+</body>
+</html>

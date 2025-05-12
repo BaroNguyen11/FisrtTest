@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+      .box {
+        position: relative;
+        border: 1px solid rgb(141, 202, 233);
+        width: 900px;
+     
+      }
+      .text1{
+        position: absolute;
+        top: 70px; /* Di chuyển chữ lên trên đường viền */
+        left: 10px;
+        font-size: 17px;  
+        background-color: white; 
+        padding: 0 10px;
+        z-index: 2;
+      }
+      .box1{
+        position: relative;
+        border: 1px solid black;
+        width: 870px;
+        height: 200px;
+        padding: 10px;
+        margin: 5px;
+        margin-bottom: 15px;
+      }
+      .text_box{
+        margin-left: 60px;
+      }
+      .text_box1{
+        margin-left: 7px;
+      }
+      .mess{
+        height: 90px;
+        width: 300px;
+        margin-left: 20px;
+      }
+      .text2{
+        position: absolute;
+        bottom: 120px; 
+        left: 10px;
+        font-size: 17px;
+        background-color: white; 
+        padding: 0 10px;
+        z-index: 2;
+      }
+      .box2{
+        position: relative;
+        border: 1px solid black;
+        width: 870px;
+        height: 70px;
+        padding: 10px;
+        margin: 5px;
+      }
+      .message{
+        margin: 5px;
+      }
+     
+    </style>
+</head>
+<body>
+   
+        <div class="box">
+                <table>
+                    <h1><b>Contact Us</b></h1>
+                </table>
+                <div class="text1">Your message</div>
+                <div class="box1">
+                    <label for="to" class="body">To</label>
+                    <input type="text" class="text_box"><br><br>
+                    <label for="email">Your email</label>
+                    <input type="text" class="text_box1"><br><br>
+                    <label for="message">Message</label>
+                    <input type="text" class="mess"><br><br>
+                    <label for="attach">Attach File</label>
+                    <input type="file" >
+                  
+                </div>
+                <div class="text2">How do you found us</div>
+                <div class="box2">
+                    <label for="select" >How did you hear of us</label>
+                   <select name="select" id="select">
+                    <option value="google">Google</option>
+                    <option value="cococ">Cốc Cốc</option>
+                    <option value="edge">Edge</option>
+                    <option value="firefox">FireFox</option>
+                   </select><br><br>
+                   <label for="new">Newsletter</label>
+                   <input type="checkbox" value="new"> Ensure this box is checked if you would like to receive email updates
+                </div>
+                <div>
+                    <input type="submit" value="Send message" class="message">
+                </div>
+            </div>
+  
+   
+   
+</body>
+</html>

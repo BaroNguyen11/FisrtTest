@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <title>Đăng ký facebook</title>
+    <style>
+        .header{
+            position: relative;
+            height: 58px;
+        }
+        .header form{
+            font-size: 12.5px;
+            position: absolute;
+            right: 0
+        }
+        .header form input[type=text]{
+            padding: 0;
+            height: 20px;
+            width: 100%;
+        }
+        .form-dk input[type=text]{
+            height: 30px;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#btnDK").click(function(){
+                let ho = $("#hoTxt").val();
+                let ten = $("#tenTxt").val();
+                let email = $("#emailTxt").val();
+                let reEmail = $("#xnEmailTxt").val();
+                let mk = $("#pwdTxt").val();
+                let ns = parseInt($("#nsTxt").val());
+
+                if(ho == ""){
+                    alert("Vui lòng nhập họ");
+                }
+                else if(!(/^[A-Z][a-z]+( [A-Z][a-z]+)*$/.test(ho))){
+                    alert("Họ không được có số hoặc ký tự đặc biệt");
+                }
+
+                if(ten == ""){
+                    alert("Vui lòng nhập tên");
+                }
+                else if(!(/^[A-Z][a-z]+( [A-Z][a-z]+)*$/.test(ho))){
+                    alert("Tên không được có số hoặc ký tự đặc biệt");
+                }
+
+                if(email == ""){
+                    alert("Vui lòng nhập Email");
+                }
+                else if(!(/^[a-z]\w+\.*\w*@gmail\.com$/.test(email))){
+                    alert("Email không hợp lệ.");
+                }
+
+                if(reEmail == ""){
+                    alert("Vui lòng nhập lại Email");
+                }
+                else if(!(reEmail == email)){
+                    alert("Email không khớp");
+                }
+
+                if(mk == ""){
+                    alert("Vui lòng nhập mật khẩu");
+                }
+                else if(!(/^(?=.*[a-zA-Z])(?=.*\d).{6,}$/.test(mk))){
+                    alert("Mật khẩu phải có ký tự chữ, số và ít nhất là 6 ký tự");
+                }
+
+                if(ns == ""){
+                    alert("Vui lòng nhập năm sinh");
+                }
+                else if(ns > 2002){
+                    alert("Năm sinh phải từ 2002 trở xuống");
+                }
+                alert("Đăng ký thành công");
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header row text-white" style="background-color:  #3b5798;">
+            <p class="col-4 fs-2 fw-bold p-0 m-0 text-start" style="line-height: 60px;">facebook</p>
+            <form class="row col-6">
+                <div class="col-5">
+                    <label for="">Email hoặc số điện thoại</label>
+                    <input type="text">
+                    <input type="checkbox" name="" id="" checked> <label style="font-size: 11px; color: rgb(197, 197, 197);">Duy trùy đăng nhập</label>
+                </div>
+                <div class="col-5">
+                    <label for="">Mật khẩu</label>
+                    <input type="text">
+                    <input type="checkbox" name="" id=""> <label style="font-size: 11px; color: rgb(197, 197, 197);">Quên mật khẩu?</label>
+                </div>
+                <div class="col-2 p-0">
+                    <button style="width: 100%; margin-top: 16px;background-color: #586a96;" class="text-white fw-bold">Đăng nhập</button>
+                </div>
+            </form>
+        </div>
+        <div class="row" style="background-color: #e5e6fb;">
+            <div class="col-5">
+                <img src="../image/image.png" alt="" class="my-4">
+                <h2 style="color: #3b5798; font-weight: normal;" class="mt-2 mb-3 col-6  text-end">Cảm ơn bạn đã <br> ghé thăm!</h2>
+                <p class="fw-bold">Chúng tôi mong sớm gặp lại bạn</p>
+            </div>
+            <div class="col-7 form-dk p-0">
+                <h1 class="fs-2 fw-bold" style="margin: 20px 0;">Đăng ký</h1>
+                <p class="fw-bold" style="margin: 20px 0;">Miễn phí và sẽ luôn như vậy</p>
+                <div class="row col-6 m-0">
+                    <input id="hoTxt" type="text" placeholder="Họ" class="form-control border-dark me-1" style="width: 48%;">
+                    <input id="tenTxt" type="text" placeholder="Tên" class="form-control border-dark me-1" style="width: 48%;">
+                </div>
+                <div class="row col-6 m-0">
+                    <input id="emailTxt" type="text" class="form-control border-dark" placeholder="Email đăng nhập">
+                </div>
+                <div class="row col-6 m-0">
+                    <input id="xnEmailTxt" type="text" class="form-control border-dark" placeholder="Nhập lại Email">
+                </div>
+                <div class="row col-6 m-0">
+                    <input id="pwdTxt" type="text" class="form-control border-dark" placeholder="Mật khẩu">
+                </div>
+                <div class="row col-6 m-0">
+                    <input id="nsTxt" type="text" class="form-control border-dark" placeholder="Năm sinh">
+                </div>
+                <div class="row m-0">
+                    <button id="btnDK" class="btn col-3 border-dark text-white p-0" style="background-color: #3bb36e;height: 25px;">Đăng ký</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

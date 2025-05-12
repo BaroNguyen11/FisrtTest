@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Gán boostrap vào k làm TABLE được giống bài tập thực hành -->
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+    <script>
+        $(document).ready(function(){
+            $("#btnDK").prop("disabled", true)
+            $("#fullNameTxt").focus();
+            function checkForm(){
+                let fullName = $("#fullNameTxt").val();
+                let lop = $("#class").val();
+                let mon = $("#monHoc").val();
+                let loai = $('input[name="hinhThuc"]:checked').val();
+
+                if(!(/^[A-Z][a-z]+( [A-Z][a-z]+)*$/.test(fullName) && fullName != '' )){
+                    return false;
+                }
+                if((loai == null)){
+                    return false;
+                }
+                return true;
+            }
+            $("#fullNameTxt, #class, #monHoc, input[name='hinhThuc']").change(function(){
+                if(checkForm()){
+                    $("#btnDK").prop("disabled", false); 
+                }
+            });
+            $("#fullNameTxt").blur(function(){
+                let fullName = $("#fullNameTxt").val();
+                if(!(/^[A-Z][a-z]+( [A-Z][a-z]+)*$/.test(fullName) && fullName != '' )){
+                    alert("Sai tên");
+                }
+            })
+            function appendTable(){
+                let fullName = $("#fullNameTxt").val();
+                let lop = $("#class").val();
+                let mon = $("#monHoc").val();
+                let loai = $('input[name="hinhThuc"]:checked').val();
+
+                let newRow = $("<tr></tr>");
+
+                newRow.append("<td>" + fullName + "</td>");
+                newRow.append("<td>" + lop + "</td>");
+                newRow.append("<td>" + mon + "</td>");
+                newRow.append("<td>" + loai + "</td>");
+
+                $(".table-ls").append(newRow);
+            }
+            $("#btnDK").click(function(){
+                appendTable();
+            })
+        })
+    </script>
+</head>
+<body>
+   <div class="container">
+        <table style="margin: 0;">
+            <tr>
+                <td>Họ tên:</td>
+                <td><input type="text" id="fullNameTxt"></td>
+            </tr>
+            <tr>
+                <td>Lớp:</td>
+                <td>
+                    <select id="class">
+                        <option value="DHKTPM9A">Đại học Kỹ thuật phần mềm 9A</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Môn học:</td>
+                <td>
+                    <select id="monHoc">
+                        <option value="LTHDT">Lập trình hướng đối tượng</option>
+                        <option value="LTHSK">Lập trình hướng sự kiện</option>
+                        <option value="CMWEB">Công nghệ web</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Loại:</td>
+                <td>
+                    <input type="radio" name="hinhThuc" value="LT">
+                    <label for="">Lý thuyết</label>
+                    <input type="radio" name="hinhThuc" value="TH">
+                    <label for="">Thực hành</label>
+                </td>
+            </tr>
+        </table>
+        <div class="row">
+            <button id="btnDK">Đăng ký</button>
+        </div>
+        <table style="width: 100%;" class="table-ls">
+            <tr>
+                <th>Họ tên</th>
+                <th>Lớp</th>
+                <th>Môn học đăng ký</th>
+                <th>Loại</th>
+            </tr>
+        </table>
+   </div>
+</body>
+</html>
